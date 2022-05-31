@@ -6,7 +6,6 @@
 </div>
 <div>
   <%= link_to 'Edit', edit_character_path(@character) %>
-  <%= link_to 'Choose this character for your next roleplay', new_character_roleplay_path(character_id: @character.id) %>
   <%= link_to "Remove", character_path(@character),
     method: :delete,
     data: { confirm: "Are you sure?" },
@@ -16,7 +15,7 @@
 </div>
 <div>
 <% if @character.photo.attached? %>
-  <%= cl_image_tag @character.photo.key, crop: :fill %>
+  <%= cl_image_tag @character.photo.key, height: 300, width: 400, crop: :fill %>
 <% else %>
   <%= image_tag 'https://res.cloudinary.com/dlzusxobf/image/upload/v1653923867/development/character_j1ujrb.jpg', crop: :fill %>
 <% end %>
@@ -25,7 +24,7 @@
 <div>
   <% @character.chatrooms.each do |chatroom| %>
   <div>
-    <%= chatroom.name %>
+    <%= link_to chatroom.name, chatroom_path(chatroom) %>
   <% end %>
   </div>
 </div>

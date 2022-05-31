@@ -9,8 +9,8 @@
              <%= simple_form_for [@character, @chatroom] do |f| %>
                 <label for="chatroom">Please make a new chatroom</label><br>
                 <%= f.label :name %>
-                <%= f.select :name, options_for_select([["Please select one", ""], "#chatroom1", "#chatroom2", "chatroom3"]) %>
-                <%= f.submit "Submit your chatroom", class: "btn" %> <br><br>
+                <%= f.text_field :name %>
+                <%= f.submit "Save your chatroom", class: "btn" %> <br><br>
               <% end %>
           </div>
         </div>
