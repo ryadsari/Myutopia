@@ -6,7 +6,7 @@ class ChatroomsController < ApplicationController
   end
 
   def index
-    @character = Character.where(character_id: @character)
+    @chatrooms = Chatroom.where(character: @character)
   end
 
   def new
