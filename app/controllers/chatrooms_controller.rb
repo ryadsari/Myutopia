@@ -1,12 +1,17 @@
 class ChatroomsController < ApplicationController
-  before_action :set_character, only: [:index, :new, :create]
+  before_action :set_character, only: [:new, :create]
+
   def show
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
   end
 
   def index
-    @chatrooms = Chatroom.where(character: @character)
+    if @character
+      @chatroom = Chatroom.where(character_id: @character)
+    else
+      @chatrooms = Chatroom.all
+    end
   end
 
   def new
