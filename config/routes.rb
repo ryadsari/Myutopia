@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :worlds
   end
 
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: [:show, :index] do
     resources :messages, only: :create
   end
 end
