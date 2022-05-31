@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :chatrooms, only: :show do
-    resources :messages, only: :create
-  end
   resources :characters
-  resources :worlds
+  get '/home', to: 'pages#home'
+  # get '/dashboard/path', to: 'bookings#show'
+  resources :characters do
+    resources :roleplays
+    resources :chatrooms, only: [:index, :new, :create]
+    resources :worlds
+  end
 end

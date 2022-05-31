@@ -1,0 +1,20 @@
+<div class="container">
+  <%#= link_to 'Back', @character_path %>
+  <div class="container mt-4 mb-4">
+    <div class="row">
+      <div class="col-6 m-auto">
+        <div class="character-form">
+          <h1>Add a new chatroom for <%= @character.name %> from <%= @character.world %></h1>
+          <div class="mt-3 mb-4 chatroom-form">
+             <%= simple_form_for [@character, @chatroom] do |f| %>
+                <label for="chatroom">Please make a new chatroom</label><br>
+                <%= f.label :name %>
+                <%= f.select :name, options_for_select([["Please select one", ""], "#chatroom1", "#chatroom2", "chatroom3"]) %>
+                <%= f.submit "Submit your chatroom", class: "btn" %> <br><br>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

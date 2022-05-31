@@ -1,0 +1,25 @@
+<div>
+  <div>
+  <h2>You can now roleplay as <%= @character.name %></h2><br>
+  </div>
+
+  <div>
+    <div class="photo">
+        <% if @roleplay.character.photo.attached? %>
+          <%= cl_image_tag @character.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <%= image_tag 'https://res.cloudinary.com/dlzusxobf/image/upload/v1653923867/development/character_j1ujrb.jpg', height: 300, width: 400, crop: :fill %>
+        <% end %>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <h3><%= @roleplay.character.name %> <%= @roleplay.character.race %></h3>
+      <hr>
+      <p><%= @roleplay.character.world %></p>
+      <hr>
+      <h3>You can roleplay with <%= @character.name %> for <%= @roleplay.length %> minutes! </h3>
+    </div>
+  </div>
+</div>
