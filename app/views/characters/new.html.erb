@@ -1,0 +1,13 @@
+<%= link_to '<', characters_path %>
+<div class="container mt-4 mb-4">
+  <div class="row">
+    <div class="col-6 m-auto">
+      <div class="turtle-form">
+        <h1>Add a new Character</h1>
+        <div class="mt-3 mb-4">
+          <%= render "form", character: @character %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
