@@ -1,2 +1,5 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<% if policy(Character).create? %>
+  <%= link_to "New character", new_character_path %>
+<% end %>
