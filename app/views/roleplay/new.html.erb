@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="description-container">
+    <div class="main-content">
+      <div class="names2">
+        <div class="name">
+          <h2 class=""> <%= @character.name  =%> <%= @character.race =%> </h2>
+        </div>
+        <div class="navigators">
+        </div>
+      </div>
+      <div class="photo">
+        <% if @character.photo.attached? %>
+          <%= cl_image_tag @character.photo.key, crop: :fill %>
+        <% else %>
+          <%= image_tag 'https://res.cloudinary.com/dlzusxobf/image/upload/v1653923867/development/character_j1ujrb.jpg', crop: :fill %>
+        <% end %>
+      </div>
+    </div>
+    <div class="names2">
+      <p class="detail"> <%= @character.world%> <p>
+    </div>
+
+    <%= simple_form_for [@character, @roleplay] do |f| %>
+      <%= f.input :length, as: :integer, required: false %>
+      <%= f.button :submit  %>
+    <% end %>
+    </div>
+  </div>
+</div>

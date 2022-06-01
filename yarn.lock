@@ -5609,6 +5609,11 @@ pumpify@^1.3.3:
     inherits "^2.0.3"
     pump "^2.0.0"
 
+pundit@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/pundit/-/pundit-0.1.0.tgz#9f466e2618882361bb4a673332f4c95c0caa1cb9"
+  integrity sha512-oetHD7weeSka+/r+2x4uSSLwq3Mqs6n8RwuNF7et+NsQhepRmNSVwNSyjBdI98hiczt6HF1fIyb/4VTbEhpDKw==
+
 punycode@1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.3.2.tgz#9653a036fb7c1ee42342f2325cceefea3926c48d"
