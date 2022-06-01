@@ -32,11 +32,11 @@ class ApplicationController < ActionController::Base
     @current_character
   end
 
-  def character_logged_in_character
+  def logged_in_character
     unless character_logged_in?
       store_location
       flash[:danger] = "Please choose a character to roleplay with"
-      redirect_to character_login_url
+      redirect_to new_character_session_path
     end
   end
 

@@ -2,7 +2,10 @@
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
 >
- <h1>#<%= @chatroom.name %></h1>
+  <div style="border-bottom: 1px solid #e9ecef">
+  <h2>#<%= @chatroom.name %> <span style="float: right; font-size: 16px; margin-right:10px; margin-left:10px">*** You are chatting as <%= current_character.name %><%= cl_image_tag current_character.photo.key, width: 50, height: 50, crop: :fill, radius: 50 %></span></h2>
+  <span style="float: right; font-size: 16px; margin-right:10px; margin-left:10px"><%= link_to 'Choose a different character', new_character_session_path %></span>
+  </div>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
        <%= render "messages/message", message: message %>
@@ -16,4 +19,5 @@
     <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", wrapper_html: {class: "flex-grow-1"} %>
     <%= f.submit "Send", class: "btn btn-primary" %>
   <% end %>
+
 </div>
