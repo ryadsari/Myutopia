@@ -1,0 +1,106 @@
+.navbar {
+  position: fixed;
+}
+
+.main-title {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  position: 50px;
+}
+
+.dashboard-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 10px;
+  justify-content: space-between;
+}
+
+.container-title {
+  padding-bottom: 14px;
+  display: flex;
+  text-align: end;
+    h2 {
+      display: flex;
+      align-items: end;
+    }
+}
+
+.characters-container-before {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.cc-container {
+  display: flex;
+  float: left;
+}
+
+.character {
+  margin-left: 22px;
+  margin-bottom: 22px;
+}
+
+.character-name {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.character-avatar {
+  height: 150px;
+  border-radius: 6px;
+}
+
+.chatrooms-container-before {
+  margin: 40px 0;
+  display: flex;
+  clear: both;
+  padding-bottom: 20px;
+}
+
+.chatrooom {
+  margin-left: 22px;
+  margin-bottom: 22px;
+}
+
+.chatroom-name {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.chatroom-avatar {
+  height: 150px;
+  border-radius: 6px;
+}
+
+.dashboard-right-container {
+  background-color: #D4D4D4;
+  height: 300px;
+  border-radius: 6px;
+  box-shadow: 10px 10px 20px #202020;
+  color: #242424;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.something-container {
+  padding-left: 45px;
+  border-right: solid 1px #b4b3b3;
+}
+
+.something-container h2 {
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+.something-list p {
+  font-family: 'Rajdhani';
+}

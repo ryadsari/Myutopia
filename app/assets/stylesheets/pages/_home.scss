@@ -14,7 +14,8 @@ body {
   color: #F5F3F3;
   margin: 20px 150px;
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,1)), url('https://img.freepik.com/free-vector/monochrome-sound-line-waves-abstract-background_1217-3549.jpg?t=st=1653998294~exp=1653998894~hmac=988ff5af872236cfe26c9f194327f11ea9d45f2b61e520b62ae794e4bf049550&w=1480');
-  background-size: 1300px 105vh;
+  background-size: cover;
+  //background-size: 1300px 105vh;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
