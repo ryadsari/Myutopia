@@ -1,7 +1,8 @@
 <div id="message-<%= message.id %>">
   <small>
-    <strong><%= message.user.email %></strong>
-         <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+
+   <div><%= cl_image_tag message.character.photo.key, width: 50, height: 50, crop: :fill, radius: 50 %><span style="margin-right:10px; margin-left:10px"><%= message.character.name %></span><i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i><span style="padding:10px; border:1px solid #aaaaaa; margin-left: 20px"><%= message.content %></span></div>
+
   </small>
-  <p><%= message.content %></p>
+
 </div>

@@ -1,6 +1,8 @@
 class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :edit, :update, :destroy]
   before_action :skip_authorization, only: :index
+  before_action :character_logged_in_character, only: [:show]
+  skip_before_action :authenticate_character!
 
   def index
     if params[:query].present?
@@ -34,6 +36,8 @@ class CharactersController < ApplicationController
     authorize @character
     @character.user = current_user
     if @character.save
+      character_log_in @character
+      flash[:success] = "You've created a new character!"
       redirect_to characters_path
     else
       render :new

@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :characters
   get '/home', to: 'pages#home'
-  # get '/dashboard/path', to: 'bookings#show'
+
+  resources :character_sessions, only: [:new, :create]
+
+
   resources :characters do
-    resources :roleplays
-    resources :chatrooms, only: [:index, :new, :create]
+    resources :chatrooms, only: [:show, :index, :new, :create]
     resources :worlds
   end
 

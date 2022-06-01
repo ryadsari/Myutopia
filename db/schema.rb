@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_01_090008) do
+ActiveRecord::Schema.define(version: 2022_06_01_150640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,13 +64,11 @@ ActiveRecord::Schema.define(version: 2022_06_01_090008) do
   create_table "messages", force: :cascade do |t|
     t.string "content"
     t.bigint "chatroom_id", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "character_id", null: false
     t.index ["character_id"], name: "index_messages_on_character_id"
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "roleplays", force: :cascade do |t|
@@ -111,7 +109,6 @@ ActiveRecord::Schema.define(version: 2022_06_01_090008) do
   add_foreign_key "characters", "users"
   add_foreign_key "messages", "characters"
   add_foreign_key "messages", "chatrooms"
-  add_foreign_key "messages", "users"
   add_foreign_key "roleplays", "characters"
   add_foreign_key "roleplays", "users"
   add_foreign_key "worlds", "characters"
