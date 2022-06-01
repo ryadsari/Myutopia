@@ -1,24 +1,27 @@
 class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :edit, :update, :destroy]
+  before_action :skip_authorization, only: :index
 
   def index
     if params[:query].present?
       sql_query = " \
-        characters.first_name ILIKE :query \
-        OR characters.last_name ILIKE :query \
+      characters.first_name ILIKE :query \
+      OR characters.last_name ILIKE :query \
       "
       @characters = Character.where(sql_query, query: "%#{params[:query]}%")
     else
-      @characters = Character.all
+      @characters = current_user.characters
     end
   end
 
-  def show
+  def show?
     @character = Character.find(params[:id])
+    authorize @character
   end
 
   def new
     @character = Character.new
+    authorize @character
   end
 
   def destroy
@@ -28,6 +31,7 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
+    authorize @character
     @character.user = current_user
     if @character.save
       redirect_to characters_path
