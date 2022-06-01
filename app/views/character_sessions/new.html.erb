@@ -1,0 +1,16 @@
+<h1 class='text-center'>Choose your character</h1>
+
+<div class="row">
+  <div class="col-md-6 offset-3">
+    <% @characters.each do |character| %>
+      <%= form_with(url: character_sessions_path, scope: :character_session, local: true) do |f| %>
+        <%= cl_image_tag character.photo.key, width: 150, height: 150, crop: :fill, radius: 50 %>
+        <%= hidden_field_tag "character_id", character.id %>
+
+        <%= f.submit "Roleplay", class: " mt-2 btn btn-primary" %>
+      <% end %>
+
+    <% end %>
+
+  </div>
+</div>
