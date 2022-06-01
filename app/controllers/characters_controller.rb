@@ -5,14 +5,10 @@ class CharactersController < ApplicationController
   skip_before_action :authenticate_character!
 
   def index
+    @characters = current_user.characters
     if params[:query].present?
-      sql_query = " \
-      characters.first_name ILIKE :query \
-      OR characters.last_name ILIKE :query \
-      "
-      @characters = Character.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @characters = current_user.characters
+      sql_query = " characters.name ILIKE :query "
+      @characters = @characters.where(sql_query, query: "%#{params[:query]}%")
     end
   end
 

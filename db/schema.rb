@@ -12,6 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2022_06_01_150640) do
 
+
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -80,6 +82,7 @@ ActiveRecord::Schema.define(version: 2022_06_01_150640) do
     t.index ["character_id"], name: "index_roleplays_on_character_id"
     t.index ["user_id"], name: "index_roleplays_on_user_id"
   end
+
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
