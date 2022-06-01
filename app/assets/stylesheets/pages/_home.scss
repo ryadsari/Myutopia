@@ -1,1 +1,187 @@
 // Specific CSS for your home-page
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  font-family: 'Bebas Neue';
+  color: #F5F3F3;
+  margin: 20px 150px;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,1)), url('https://img.freepik.com/free-vector/monochrome-sound-line-waves-abstract-background_1217-3549.jpg?t=st=1653998294~exp=1653998894~hmac=988ff5af872236cfe26c9f194327f11ea9d45f2b61e520b62ae794e4bf049550&w=1480');
+  background-size: 1300px 105vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  position: fixed;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title h1 {
+  font-size: 2rem;
+  color: white;
+}
+
+.signup-login {
+  display: flex;
+  justify-content: space-between;
+}
+
+.signup-login a {
+  text-decoration: none;
+  color: #F5F3F3;
+  -o-transition: all .2s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.signup-login a:hover {
+  cursor: pointer;
+  -o-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  color: #FF6B00
+}
+
+
+.title {
+  font-size: 1.2rem !important;
+  color: #FF6B00;
+}
+
+.title-second {
+  letter-spacing: 0.6rem;
+}
+
+.banner-text-container {
+  padding: 150px 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-text {
+  padding: 100px 0 50px 0;
+}
+
+.banner-text p{
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 30px;
+}
+
+.banner-text h3 {
+  font-size: 3rem;
+  letter-spacing: 0.6rem;
+}
+
+#info-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 3rem;
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+.info-titles {
+  padding-bottom: 1rem;
+  letter-spacing: 0.3rem;
+}
+
+.small-descriptions {
+  font-family: 'Rajdhani';
+}
+
+.container-button {
+  display: flex;
+  justify-content: center;
+}
+.button-primary {
+  text-decoration: none;
+  padding: 0.3rem 2rem;
+  font-size: 25px;
+  font-family: 'Bebas Neue';
+  color: #fff;
+  cursor: pointer;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 30px;
+  -o-transition: all .2s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  background-image: linear-gradient(to right, #FF6B00, #FF6B00, #ff5100, #ff6720);
+  box-shadow: 0 2px 10px 0 rgba(65, 64, 64, 0.75);
+}
+
+.button-primary:hover{
+  background-position: 100% 0;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  color: #F5F3F3;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+
+
+.arrow-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 110px
+}
+
+.arrow {
+  font-family: 'Montserrat';
+  color: #F5F3F3;
+  text-decoration: none;
+}
+
+.arrow:hover {
+  color: #F5F3F3;
+}
+
+#log-in {
+  margin: 125px 0;
+}
+
+.log-in-box {
+  width: 100%;
+  display: flex;
+}
+
+.log-in-box-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.input-fields {
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 20px;
+  font-family: 'Rajdhani';
+  padding: 0.5rem;
+  width: 300px;
+  background-color: rgba(26, 26, 26, 0.9);
+  box-shadow: 0 2px 10px 0 rgba(65, 64, 64, 0.5);
+}
+
+.input-fields:focus {
+  background-color: #F5F3F3;
+}
