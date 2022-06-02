@@ -59,6 +59,8 @@
         <input type="email" placeholder="your email" class="input-fields">
         <label for="password"></label><br>
         <input type="password" placeholder="your password" class="input-fields">
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <%= link_to "Log in", new_user_session_path, method: :new %>
       </form>
     </div>
   </div>
