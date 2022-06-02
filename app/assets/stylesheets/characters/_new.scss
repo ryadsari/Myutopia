@@ -1,0 +1,49 @@
+.new_chara_body {
+  background-color: white;
+  background-image: url('https://t3.ftcdn.net/jpg/02/94/99/24/360_F_294992494_kPG2PgIe6Jn9sU4OcSw6Th6SvZD4OfWy.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.cv5{
+  color: #FF6B00;
+
+
+}
+
+.hover{
+  box-shadow: inset 100px 0 0 0 #54b3d6;
+
+
+}
+.form-control {
+  background: rgb(32, 30, 30);
+  color: #FF6B00;
+  border: 1px solid #FF6B00;
+
+}
+
+.form-control:focus {
+  background: #FF6B00;
+  color:rgb(32, 30, 30);
+  border: 2px solid black;
+}
+
+.new_chara_body {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: #FF6B00;
+}
+
+a:hover {
+  position: relative;
+  text-decoration: none;
+  color: #FF6B00;
+  opacity: 0.5;
+}
