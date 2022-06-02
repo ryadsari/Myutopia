@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   resources :characters
   get '/home', to: 'pages#home'
   get '/dashboard', to: 'dashboards#index'
+
+  resources :character_sessions, only: [:new, :create]
+
+
   resources :characters do
-    resources :roleplays
-    resources :chatrooms, only: [:index, :new, :create]
+    resources :chatrooms, only: [:show, :index, :new, :create]
     resources :worlds
   end
 

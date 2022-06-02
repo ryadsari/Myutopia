@@ -1,6 +1,6 @@
 require "test_helper"
 
-class RoleplayTest < ActiveSupport::TestCase
+class CharacterSessionsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

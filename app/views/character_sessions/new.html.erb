@@ -1,0 +1,20 @@
+
+<div class="container char-container">
+<h1 class='text-center mb-4'>Choose your character</h1>
+  <div class="d-flex p-2 align-items-center flex-row flex-nowrap justify-content-between">
+    <% @characters.each do |character| %>
+    <div class="choose-char-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path character.photo.key, height: 150, width: 150, crop: :fill %>')">
+      <%= form_with(url: character_sessions_path, scope: :character_session, local: true) do |f| %>
+      <%= hidden_field_tag "character_id", character.id %>
+      <%= f.submit character.name, class: "submit-ch-btn" %>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="d-flex p-2 align-items-center flex-column flex-nowrap justify-content-center">
+    <h1 class='text-center mb-4'>Or</h1>
+    <a href="/characters/new" class="btn char-btn text-center">Add a new character</a>
+  </div>
+
+</div>
