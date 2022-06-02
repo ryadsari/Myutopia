@@ -1,0 +1,119 @@
+<nav class="navbar">
+  <div class="title">
+    <h1>MY<br><span class="title-second">UTOPIA</span></h1>
+  </div>
+    <div class="signup-login">
+      <%= link_to 'Log Out', '/users/sign_in' %>
+    </div>
+</nav>
+<div class="main-title">
+  <h1>Dashboard</h1>
+</div>
+<div class="dashboard-container">
+  <div class="dashboard-left-container">
+    <div class="characters-container-before">
+      <div class="container-title">
+        <h2>Your Characters</h2>
+      </div>
+      <div class="cc-container">
+        <%= link_to characters_path do %>
+          <div class="character">
+            <p class="character-name"></p>
+            <img class="character-avatar" src="assets/people1.png">
+          </div>
+        <% end %>
+        <%= link_to characters_path do %>
+          <div class="character">
+            <p class="character-name"></p>
+            <img class="character-avatar" src="assets/people2.png">
+          </div>
+        <% end %>
+        <%= link_to characters_path do %>
+          <div class="character">
+            <p class="character-name"></p>
+            <img class="character-avatar" src="assets/people3.png">
+          </div>
+        <% end %>
+        <%= link_to characters_path do %>
+          <div class="character">
+            <p class="character-name"></p>
+            <img class="character-avatar" src="assets/people4.png">
+          </div>
+        <% end %>
+        <%= link_to characters_path do %>
+          <div class="character">
+            <p class="character-name"></p>
+            <img class="character-avatar" src="assets/people2.png">
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="chatrooms-container-before">
+      <div class="container-title">
+        <h2>Your Chatrooms</h2>
+      </div>
+      <div class="chatrooms-container">
+        <%= link_to characters_path do %>
+          <div class="cc-container">
+            <div class="chatrooom">
+              <p class="chatroom-name"></p>
+              <img class="chatroom-avatar" src="assets/people1.png">
+          </div>
+        <% end %>
+        <%= link_to characters_path do %>
+          <div class="chatrooom">
+            <p class="chatroom-name"></p>
+            <img class="chatroom-avatar" src="assets/people2.png">
+          </div>
+        <% end %>
+          <%= link_to characters_path do %>
+            <div class="chatrooom">
+              <p class="chatroom-name"></p>
+              <img class="chatroom-avatar" src="assets/people3.png">
+            </div>
+        <% end %>
+          <%= link_to characters_path do %>
+            <div class="chatrooom">
+              <p class="chatroom-name"></p>
+              <img class="chatroom-avatar" src="assets/people4.png">
+            </div>
+        <% end %>
+        <%= link_to characters_path do %>
+          <div class="chatrooom">
+            <p class="chatroom-name"></p>
+            <img class="chatroom-avatar" src="assets/people2.png">
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="dashboard-right-container">
+    <div class="something-container">
+      <h2>Notifications</h2>
+      <div class="something-list">
+        <p>You have a new message from Camila</p>
+        <p>You have been added to this Chatroom</p>
+        <p>Discover new friends</p>
+        <p>Join this community that fits your tastes</p>
+      </div>
+    </div>
+    <div class="something-container">
+      <h2>A Cool Feature</h2>
+      <div class="something-list">
+        <p>A first pretty cool feature 1</p>
+        <p>A first pretty feature 2</p>
+        <p>A first first firstpretty cool feature 3</p>
+        <p>A first pretty feature 4</p>
+      </div>
+    </div>
+    <div class="something-container">
+      <h2>Another Cool Feature</h2>
+      <div class="something-list">
+        <p>Second cool feature 1</p>
+        <p>Second awesome cool feature 2</p>
+        <p>Second cool cool feature 3</p>
+        <p>Second cool cool cool coolfeature 4</p>
+      </div>
+    </div>
+  </div>
+</div>

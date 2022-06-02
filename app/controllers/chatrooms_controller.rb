@@ -1,5 +1,7 @@
 class ChatroomsController < ApplicationController
   before_action :set_character, only: [:new, :create]
+  before_action :skip_authorization
+  before_action :logged_in_character
 
   def show
     @chatroom = Chatroom.find(params[:id])
@@ -15,25 +17,42 @@ class ChatroomsController < ApplicationController
   end
 
   def new
-    @character = Character.find(params[:character_id])
-    @chatroom = Chatroom.new
+    @chatroom = current_character.chatrooms.new
   end
 
   def create
-    @chatroom = Chatroom.new(chatroom_params)
-    @character = Character.find(params[:character_id])
-    @chatroom.character = @character
+    @chatroom = current_character.chatrooms.build(chatroom_params)
     if @chatroom.save
-      redirect_to character_path(@chatroom.character)
+      flash[:success] = "Chatroom has been created!"
+      redirect_to @chatroom
     else
       render 'new'
     end
   end
 
+  def edit
+    @chatroom = current_character.chatrooms.find(chatroom[:id])
+  end
+
+  def update
+    @chatroom = current_character.chatrooms.find(params[:id])
+    if @chatroom.update_attributes(chatroom_params)
+      flash[:success] = "Chatroom updated"
+      redirect_to @chatroom
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
-    @chatroom = Chatroom.find(params[:id])
-    @chatroom.destroy
-    redirect_to character_path(@chatroom.character)
+    @chatroom = current_character.chatrooms.find(params[:id])
+    if @chatroom
+      @chatroom.destroy
+      flash[:success] = "Chatroom has been deleted"
+    else
+      flash[:alert] = "Error"
+    end
+    redirect_to root_path
   end
 
   private

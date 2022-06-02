@@ -1,12 +1,11 @@
-stylesheetGuidelines
 <nav class="navbar">
   <div class="title">
     <h1>MY<br><span class="title-second">UTOPIA</span></h1>
   </div>
     <div class="signup-login">
-      <a href="#log-in">Log In</a>
+      <%= link_to 'Log In', '/users/sign_in' %>
       <p>/</p>
-      <a href="#log-in">Sign Up</a>
+      <%= link_to 'Sign Up', '/users/sign_up' %>
     </div>
 </nav>
 <div class="banner-text-container">
@@ -60,6 +59,8 @@ stylesheetGuidelines
         <input type="email" placeholder="your email" class="input-fields">
         <label for="password"></label><br>
         <input type="password" placeholder="your password" class="input-fields">
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <%= link_to "Log in", new_user_session_path, method: :new %>
       </form>
     </div>
   </div>

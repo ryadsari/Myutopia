@@ -20,12 +20,14 @@
 .form-control {
   background: rgb(32, 30, 30);
   color: #FF6B00;
+  border: 1px solid #FF6B00;
 
 }
 
 .form-control:focus {
   background: #FF6B00;
   color:rgb(32, 30, 30);
+  border: 2px solid black;
 }
 
 .new_chara_body {
@@ -35,4 +37,13 @@
 
 a {
   position: relative;
+  text-decoration: none;
+  color: #FF6B00;
+}
+
+a:hover {
+  position: relative;
+  text-decoration: none;
+  color: #FF6B00;
+  opacity: 0.5;
 }
