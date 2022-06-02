@@ -1,7 +1,7 @@
 class ChatroomsController < ApplicationController
   before_action :set_character, only: [:new, :create]
   before_action :skip_authorization
-  before_action :character_logged_in_character
+  before_action :logged_in_character
 
   def show
     @chatroom = Chatroom.find(params[:id])

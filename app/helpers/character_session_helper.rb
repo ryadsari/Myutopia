@@ -1,11 +1,11 @@
 module CharacterSessionHelper
   def character_log_in(character)
-    character_session[:character_id] = character.id
+    session[:character_id] = character.id
   end
 
   def current_character
-    if character_session[:character_id]
-      @current_character ||= Character.find_by(id: character_session[:character_id])
+    if session[:character_id]
+      @current_character ||= Character.find_by(id: session[:character_id])
     end
   end
 
@@ -14,7 +14,7 @@ module CharacterSessionHelper
   end
 
   def character_log_out
-    character_session.delete(:character_id)
+    session.delete(:character_id)
     @current_character = nil
   end
 
@@ -23,11 +23,11 @@ module CharacterSessionHelper
   end
 
   def redirect_back_or(default)
-    redirect_to(character_session[:forwarding_url] || default)
-    character_session.delete(:forwarding_url)
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
   end
 
   def store_location
-    character_session[:forwarding_url] = request.original_url if request.get?
+    session[:forwarding_url] = request.original_url if request.get?
   end
 end
