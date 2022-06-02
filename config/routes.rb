@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/home', to: 'pages#home'
   get '/stylesheet/chatroom', to: 'stylesheets#chatroom'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/dashboard', to: 'dashboards#index'
   resources :characters
+
 
 
   resources :character_sessions, only: [:new, :create]
