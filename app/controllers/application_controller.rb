@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :authenticate_character!
+  skip_before_action :authenticate_character!, if: :devise_controller?
 
   helper_method :current_character
 

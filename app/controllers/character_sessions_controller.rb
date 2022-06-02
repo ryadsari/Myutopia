@@ -2,7 +2,8 @@ class CharacterSessionsController < ApplicationController
   skip_before_action :authenticate_character!
 
   def new
-    @characters = current_user.characters
+      @characters = current_user.characters
+
   end
 
   def create
