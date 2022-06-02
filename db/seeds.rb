@@ -1,4 +1,9 @@
 require "open-uri"
+puts "Cleaning db..."
+Message.destroy_all
+Chatroom.destroy_all
+Character.destroy_all
+User.destroy_all
 
 puts 'Creating usernames...'
 
