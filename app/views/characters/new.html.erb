@@ -1,13 +1,24 @@
-<%= link_to '<', characters_path %>
-<div class="container mt-4 mb-4">
-  <div class="row">
-    <div class="col-6 m-auto">
-      <div class="turtle-form">
-        <h1>Add a new Character</h1>
-        <div class="mt-3 mb-4">
-          <%= render "form", character: @character %>
+<body class="new_chara_body">
+  <%= link_to '<', characters_path, class: 'cv5' %>
+  <h1 class="cv5">Add a new Character</h1>
+    <div id='dumbcss'>
+      <%= simple_form_for @character do |f| %>
+        <div class="cv5">
+          <%= f.input :name, class: 'form-control form-border' %>
+          </div>
+          <div class="cv5">
+          <%= f.input :world, class: 'form-control form-border cv6' %>
+          </div>
+          <div class="cv5">
+          <%= f.input :race, class: 'form-control form-border cv6' %>
+          </div>
+          <div class="cv5">
+          <%= f.input :photo, as: :file, class: 'form-control form-border cv6' %>
+          </div>
+          <div class="cv5">
+          <%= link_to 'Cancel', characters_path , class: 'btn  ms-2 submit-button cv5' %>
+          <%= f.submit class: 'btn nav-btn cv5' %>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+    <% end %>
+</body>
