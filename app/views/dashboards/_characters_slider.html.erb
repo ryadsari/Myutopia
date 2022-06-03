@@ -1,99 +1,22 @@
 <div class="character-container slider"  data-controller="carousel">
   <button class="btn btn-next carousel-control" data-action="click->carousel#moveForward">></button>
   <div class="slide" data-carousel-target="slide">
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people1.png">
-    </div>
+    <% @characters.each do |character| %>
+      <%= link_to characters_path do %>
+        <div class="character">
+          <p class="character-name"><%= character.name %></p>
+          <%= cl_image_tag character.photo.key, class: "character-avatar" %>
+        </div>
+      <% end %>
     <% end %>
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people2.png">
-      </div>
-    <% end %>
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people3.png">
-      </div>
-    <% end %>
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people4.png">
-      </div>
-    <% end %>
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people2.png">
-      </div>
+    <% (5- @characters.count).times do %>
+      <%= link_to characters_path do %>
+        <div class="character">
+          <p class="character-name">.</p>
+          <img class="character-avatar" src="assets/plus-sign2">
+        </div>
+      <% end %>
     <% end %>
   </div>
-  <div class="slide" data-carousel-target="slide">
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people1.png">
-      </div>
-    <% end %>
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people2.png">
-      </div>
-    <% end %>
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people3.png">
-      </div>
-    <% end %>
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people4.png">
-      </div>
-    <% end %>
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people2.png">
-      </div>
-    <% end %>
-  </div>
-  <div class="slide" data-carousel-target="slide">
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people1.png">
-      </div>
-    <% end %>
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people2.png">
-      </div>
-    <% end %>
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people3.png">
-      </div>
-    <% end %>
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people4.png">
-      </div>
-    <% end %>
-    <%= link_to characters_path do %>
-      <div class="character">
-        <p class="character-name"></p>
-        <img class="character-avatar" src="assets/people2.png">
-      </div>
-    <% end %>
   <button class="btn btn-prev carousel-control"  data-action="click->carousel#moveBackwards"><</button>
-  </div>
+</div>
