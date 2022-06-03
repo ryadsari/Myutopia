@@ -1,6 +1,6 @@
 
 <div class="form">
-  <%= form_tag characters_path, method: :get do %>
+  <%= form_tag characters_path, method: :get, id: "search-form" do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
@@ -9,11 +9,3 @@
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 </div>
-
-<%= form_tag characters_path, method: :get, id: "search-form" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a character"
-  %>
-  <%= submit_tag "Search", class: "btn btn-warning" %>

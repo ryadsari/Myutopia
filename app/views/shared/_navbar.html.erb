@@ -1,22 +1,24 @@
 
-  <nav class="navbar navbar-fixed-top">
-    <div class="title">
-      <%= link_to "MY UTOPIA", home_path, class: "title-second" %>
-
-    </div>
-      <div class="dropdown">
-      <button
-        class="btn btn-primary dropdown-toggle new-dropdown"
-        type="button"
-        id="dropdownMenuButton"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-      </button>
-      <ul class="dropdown-menu drop-show" aria-labelledby="dropdownMenuButton" >
+  </div>
+    <div class="dropdown">
+    <button
+      class="btn btn-primary dropdown-toggle new-dropdown"
+      type="button"
+      id="dropdownMenuButton"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+    </button>
+    <ul class="dropdown-menu drop-show" aria-labelledby="dropdownMenuButton" >
+      <% if user_signed_in? %>
+        <%# <li>You are signed in as current_character.name </li> %>
+        <li><%= link_to "My characters", characters_path, class: "dropdown-item" %></li>
+        <li><%= link_to "Chatrooms", chatrooms_path, class: "dropdown-item" %></li>
+        <li><%= link_to "Switch character", new_character_session_path, class: "dropdown-item" %></li>
         <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+      <% else %>
         <li><%= link_to "Sign in", user_session_path, class: "dropdown-item" %></li>
-        <li><%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %></li>
-      </ul>
-    </div>
-  </nav>
+      <% end %>
+    </ul>
+  </div>
+</nav>
