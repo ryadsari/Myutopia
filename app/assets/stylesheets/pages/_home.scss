@@ -20,13 +20,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  width: 75%;
-  position: fixed;
-}
-
 .title {
   display: flex;
   justify-content: space-between;
@@ -55,7 +48,7 @@ body {
   -o-transition: all .3s ease-in-out;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
-  color: #FF6B00
+  color: #FF6B00;
 }
 
 
@@ -69,7 +62,7 @@ body {
 }
 
 .banner-text-container {
-  padding: 150px 0;
+  padding: 60px 0;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -185,4 +178,27 @@ body {
 
 .input-fields:focus {
   background-color: #F5F3F3;
+}
+
+.form-button {
+  color: #FF6B00;
+  padding: 0 !important;
+}
+
+.simple_form{
+  display: flex;
+  justify-content: center;
+}
+
+.form-custom {
+  width: 350px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.form-inputs {
+  display: block;
 }

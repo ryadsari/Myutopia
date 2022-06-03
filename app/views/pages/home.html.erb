@@ -5,9 +5,7 @@
     <p>Join the community</p>
   </div>
   <div class="container-button">
-    <a class="button-primary">
-      J O I N
-    </a>
+    <%= link_to 'JOIN', user_session_path, class: 'button-primary' %>
   </div>
   <div class="arrow-container">
     <a href="#info-section" class="arrow">v</a>
@@ -29,7 +27,7 @@
     </div>
   </div>
 </div>
-<div id="log-in">
+<%# <div id="log-in">
   <div class="log-in-box">
     <div class="form-container">
       <p class="log-in-box-title">Join the Community</p>
@@ -51,8 +49,8 @@
         <label for="password"></label><br>
         <input type="password" placeholder="your password" class="input-fields">
         <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-        <%= link_to "Log in", new_user_session_path, method: :new %>
-      </form>
+        <%#= link_to "Log in", new_user_session_path, method: :new %>
+      <%# </form>
     </div>
   </div>
-</div>
+</div> %>
