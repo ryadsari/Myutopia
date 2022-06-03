@@ -5,7 +5,7 @@
       <%= link_to characters_path do %>
         <div class="character">
           <p class="character-name"><%= character.name %></p>
-          <img class="character-avatar" src="assets/people1.png">
+          <%= cl_image_tag character.photo.key, class: "character-avatar" %>
         </div>
       <% end %>
     <% end %>

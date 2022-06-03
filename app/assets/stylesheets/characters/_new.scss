@@ -1,6 +1,8 @@
 .new_chara_body {
   background-color: white;
-  background-image: url('https://t3.ftcdn.net/jpg/02/94/99/24/360_F_294992494_kPG2PgIe6Jn9sU4OcSw6Th6SvZD4OfWy.jpg');
+  // background-image: url('https://t3.ftcdn.net/jpg/02/94/99/24/360_F_294992494_kPG2PgIe6Jn9sU4OcSw6Th6SvZD4OfWy.jpg');
+  // background-image: url('https://wallpaperaccess.com/full/1236679.jpg');
+  background-image: url('https://cdn.wallpapersafari.com/23/46/vshTql.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -8,20 +10,15 @@
 
 .cv5{
   color: #FF6B00;
-
-
 }
 
-.hover{
+.cv5 #hover{
   box-shadow: inset 100px 0 0 0 #54b3d6;
-
-
 }
 .form-control {
   background: rgb(32, 30, 30);
   color: #FF6B00;
   border: 1px solid #FF6B00;
-
 }
 
 .form-control:focus {
@@ -30,18 +27,33 @@
   border: 2px solid black;
 }
 
+.form-control::placeholder {
+  color: #FF6B00;
+}
+
+.form-control::placeholder:focus {
+  color: black;
+}
+
+.form-control::file-selector-button {
+  background: #FF6B00;
+}
+.form-control::file-selector-button:focus {
+  background: black;
+}
+
 .new_chara_body {
   display: flex;
   flex-direction: column;
 }
 
-a {
+.new_chara_body > a {
   position: relative;
   text-decoration: none;
   color: #FF6B00;
 }
 
-a:hover {
+.new_chara_body > a:hover {
   position: relative;
   text-decoration: none;
   color: #FF6B00;

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/home', to: 'pages#home'
   get '/stylesheet/chatroom', to: 'stylesheets#chatroom'
   get '/dashboard', to: 'dashboards#index'
+  # get '/dashboard', to: 'dashboards#index'
   resources :characters
 
 
