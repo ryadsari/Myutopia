@@ -1,7 +1,6 @@
 class ChatroomsController < ApplicationController
-  before_action :set_character, only: [:new, :create]
   before_action :skip_authorization
-  before_action :logged_in_character
+  # before_action :logged_in_character - will this be necessary to display favourite chatrooms?
 
   def show
     @chatroom = Chatroom.find(params[:id])
@@ -10,19 +9,15 @@ class ChatroomsController < ApplicationController
   end
 
   def index
-    if @character
-      @chatroom = Chatroom.where(character_id: @character)
-    else
-      @chatrooms = Chatroom.all
-    end
+    @chatrooms = Chatroom.all
   end
 
   def new
-    @chatroom = current_character.chatrooms.new
+    @chatroom = Chatroom.new
   end
 
   def create
-    @chatroom = current_character.chatrooms.build(chatroom_params)
+    @chatroom = Chatroom.new(chatroom_params)
     if @chatroom.save
       flash[:success] = "Chatroom has been created!"
       redirect_to @chatroom
@@ -32,11 +27,11 @@ class ChatroomsController < ApplicationController
   end
 
   def edit
-    @chatroom = current_character.chatrooms.find(chatroom[:id])
+    @chatroom = Chatroom.find(params[:id])
   end
 
   def update
-    @chatroom = current_character.chatrooms.find(params[:id])
+    @chatroom = Chatroom.find(params[:id])
     if @chatroom.update_attributes(chatroom_params)
       flash[:success] = "Chatroom updated"
       redirect_to @chatroom
@@ -46,7 +41,6 @@ class ChatroomsController < ApplicationController
   end
 
   def destroy
-    @chatroom = current_character.chatrooms.find(params[:id])
     if @chatroom
       @chatroom.destroy
       flash[:success] = "Chatroom has been deleted"
@@ -59,10 +53,6 @@ class ChatroomsController < ApplicationController
   private
 
   def chatroom_params
-    params.require(:chatroom).permit(:name)
-  end
-
-  def set_character
-    @character = Character.find(params[:character_id])
+    params.require(:chatroom).permit(:name, :category, :photo)
   end
 end

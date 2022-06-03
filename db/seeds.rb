@@ -106,8 +106,8 @@ mario.user = julia
 mario.save
 
 Character.all.each do |character|
-  character_seed = Chatroom.create(name: "#chatroom_#{character.name}")
-  character_seed.character_id = character.id
+  @categories = ["roleplay", "science", "entertainment", "education"]
+  character_seed = Chatroom.create(name: "#chatroom_#{character.name}", category: @categories.sample)
   character_seed.save
 end
 
