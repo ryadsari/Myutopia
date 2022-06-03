@@ -1,36 +1,36 @@
-<div class="container">
-  <div class="d-flex justify-content-between align-items-center">
-    <div class="p-4 chatroom-list">
+<div class="header">
+  <div class="row">
+      <div class="col-sm col-md-6">
+        <h2>#<%= @chatroom.name %>
+      </div>
+      <div class="col-sm col-md-5">
+      <p class="char-name">You are chatting as <%= current_character.name %></p>
+      </div>
+      <div class="col-sm col-md-1">
+        <%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50 %>
+      </div>
+    </div>
+</div>
+
+<div class="row">
+  <div class="column side chatroom-list">
       <% @chatrooms.each do |chatroom| %>
       <li>
       <%= link_to chatroom.name, chatroom_path(chatroom) %>
       </li>
       <% end %>
-    </div>
-
-
-<div class="chatroom p-4"
-  data-controller="chatroom-subscription"
-  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
->
-  <div class="row">
-    <div class="col-sm col-md-6">
-      <h2>#<%= @chatroom.name %>
-    </div>
-    <div class="col-sm col-md-5">
-     <p class="char-name">You are chatting as <%= current_character.name %></p>
-    </div>
-    <div class="col-sm col-md-1">
-      <%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50 %>
-    </div>
   </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <%= link_to 'Choose a different character', new_character_session_path, class: "link-char float-right" %>
+  <div class="column middle chatroom"
+      data-controller="chatroom-subscription"
+      data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+    >
+    <div class="row">
+      <div class="col-sm-12">
+        <%= link_to 'Choose a different character', new_character_session_path, class: "link-char float-right" %>
+      </div>
     </div>
-  </div>
-  <div class="messages" data-chatroom-subscription-target="messages">
-    <% @chatroom.messages.each do |message| %>
+    <div class="messages" data-chatroom-subscription-target="messages">
+      <% @chatroom.messages.each do |message| %>
       <%= render "messages/message", message: message %>
       <% end %>
     </div>
@@ -38,9 +38,7 @@
         remote: true,
         html: {data: {action: "ajax:success->chatroom-subscription#resetForm"}, class: "d-flex" } do |f|
       %>
-        <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", wrapper_html: {class: "flex-grow-1 mb-0"} %>
+        <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", wrapper_html: {class: "flex-grow-1"} %>
         <%= f.submit "Send", class: "btn button-primary" %>
       <% end %>
-    </div>
-  </div>
 </div>
