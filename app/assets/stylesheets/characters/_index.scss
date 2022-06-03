@@ -4,13 +4,12 @@
 }
 
 .container_chara_card {
-  font-family: Raleway, Helvetica, sans-serif;
   margin-top: 2em;
   display: flex;
+
   flex: space-between;
   align-items: center;
   box-shadow: 0 0 0.5em #FF6B00;
-
   padding-right: 10em;
   border-radius: 1em;
   background-color: rgba(70, 68, 68, 0.647);
@@ -41,8 +40,4 @@
   width: 70%;
   margin-left: 15%;
   margin-top: 2.2em;
-}
-
-.card_text {
-  margin-left: 15%;
 }
