@@ -1,1 +1,48 @@
-@import 'new';
+.charater_index_body {
+  background-color: white;
+  margin: 0;
+}
+
+.container_chara_card {
+  font-family: Raleway, Helvetica, sans-serif;
+  margin-top: 2em;
+  display: flex;
+  flex: space-between;
+  align-items: center;
+  box-shadow: 0 0 0.5em #FF6B00;
+
+  padding-right: 10em;
+  border-radius: 1em;
+  background-color: rgba(70, 68, 68, 0.647);
+}
+
+.card_photo{
+  height: 12em;
+  width: 55%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+.charater_index_body  a {
+  text-decoration: none;
+  color: #FF6B00;
+}
+
+.charater_index_body a:hover {
+  text-decoration: none;
+  color: #FF6B00;
+}
+
+.main-container {
+  display: grid;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 2.2em;
+}
+
+.card_text {
+  margin-left: 15%;
+}
