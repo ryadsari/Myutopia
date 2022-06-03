@@ -29,6 +29,10 @@ class ApplicationController < ActionController::Base
     redirect_to new_character_session_path if @current_character.nil?
   end
 
+  def after_sign_in_path_for(resource)
+    user_session_path
+  end
+
   def current_character
     @current_character
   end

@@ -1,5 +1,5 @@
 .navbar {
-  position: fixed;
+  position: sticky;
 }
 
 .main-title {
@@ -23,6 +23,7 @@
     h2 {
       display: flex;
       align-items: end;
+      margin-bottom: 45px;
     }
 }
 
@@ -131,15 +132,15 @@
 }
 
 
-.btn {
-  border: none;
-  z-index: 10px;
-  cursor: pointer;
-  background-color: #fff;
-  font-size: 18px;
-}
 
-.btn:active {
+.carousel-control {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+
+
+.carousel-control:active {
   transform: scale(1.1);
 }
 
