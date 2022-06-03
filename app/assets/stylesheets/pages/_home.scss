@@ -20,6 +20,14 @@ body {
   background-repeat: no-repeat;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  position: fixed;
+  top:0;
+}
+
 .title {
   display: flex;
   justify-content: space-between;
@@ -180,6 +188,7 @@ body {
   background-color: #F5F3F3;
 }
 
+
 .form-button {
   color: #FF6B00;
   padding: 0 !important;
@@ -201,4 +210,14 @@ body {
 
 .form-inputs {
   display: block;
+
+a {
+  text-decoration: none;
+  color: #FF6B00;
+  font-size: 18px;
+}
+
+a:hover {
+  color: white;
+
 }
