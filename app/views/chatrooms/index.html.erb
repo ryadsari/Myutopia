@@ -1,8 +1,48 @@
+<div class="chatrooms-container">
+  <div class="sidenav">
+    <div class="sidenav-logo d-flex justify-content-center">
+      <a href="/home">MY<br><span class="title-second">UTOPIA</span></a>
+    </div>
+    <div class="sidenav-links">
+    <h3>Discover our chatrooms</h3>
+    <a href="#">Category 1</a>
+    <a href="#">Category 2</a>
+    <a href="#">Category 3</a>
+    </div>
+  </div>
+  <div class="chatroom-cards">
+    <div class="discover-chatrooms-header d-flex align-items-center justify-content-center bg-image">
+      <h1>Choose Your Chatroom</h1>
+    </div>
+    <div class="mt-4 d-flex justify-content-center flex-row flex-wrap p-2">
+      <% @chatrooms.each do |chatroom| %>
+        <div class="p-2 chatroom-card">
+          <%= link_to chatroom_path(chatroom) do %>
+            <% if chatroom.photo.attached? %>
+          <div  style="width:400px; height:300px">
+            <%= cl_image_tag chatroom.photo.key, height: 180, width: 200, crop: :fill, class: "chatroom-img" %>
+          </div>
+            <% else %>
+              <%= image_tag 'https://images.unsplash.com/photo-1585620385456-4759f9b5c7d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', height: 180, width: 200, class: "chatroom-img" %>
+            <% end %>
+          <div>
+            <p class="category-name"><%= chatroom.name %></p>
 
-<div>
-  <% @chatrooms.each do |chatroom| %>
-  <li>
-  <%= link_to chatroom.name, chatroom_path(chatroom) %>
-  </li>
-  <% end %>
+              <% if chatroom.category.nil? %>
+                <p class="category"><%= link_to "Add category", edit_chatroom_path %></p>
+              <% else %>
+                <p class="category">Category: <%= chatroom.category %></p>
+              <% end %>
+
+          </div>
+            <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="footer">
+      <p>Footer</p>
+    </div>
+  </div>
+
+
 </div>

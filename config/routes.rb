@@ -6,17 +6,8 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboards#index'
   # get '/dashboard', to: 'dashboards#index'
   resources :characters
-
-
-
   resources :character_sessions, only: [:new, :create]
-
-  resources :characters do
-    resources :chatrooms, only: [:show, :index, :new, :create]
-    resources :worlds
-  end
-
-  resources :chatrooms, only: [:show, :index] do
+  resources :chatrooms, only: [:show, :index, :new, :create] do
     resources :messages, only: :create
   end
 end
