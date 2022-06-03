@@ -1,15 +1,18 @@
+  <nav class="navbar navbar-fixed-top">
+    <div class="title">
+      <%= link_to "MY UTOPIA", home_path, class: "title-second" %>
 
-  </div>
-    <div class="dropdown">
-    <button
-      class="btn btn-primary dropdown-toggle new-dropdown"
-      type="button"
-      id="dropdownMenuButton"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-    </button>
-    <ul class="dropdown-menu drop-show" aria-labelledby="dropdownMenuButton" >
+    </div>
+      <div class="dropdown">
+      <button
+        class="btn btn-primary dropdown-toggle new-dropdown"
+        type="button"
+        id="dropdownMenuButton"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+      </button>
+      <ul class="dropdown-menu drop-show" aria-labelledby="dropdownMenuButton" >
       <% if user_signed_in? %>
         <%# <li>You are signed in as current_character.name </li> %>
         <li><%= link_to "My characters", characters_path, class: "dropdown-item" %></li>
@@ -19,6 +22,6 @@
       <% else %>
         <li><%= link_to "Sign in", user_session_path, class: "dropdown-item" %></li>
       <% end %>
-    </ul>
-  </div>
-</nav>
+      </ul>
+    </div>
+  </nav>
