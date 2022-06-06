@@ -4,10 +4,12 @@
       <a href="/home">MY<br><span class="title-second">UTOPIA</span></a>
     </div>
     <div class="sidenav-links">
-    <h3>Discover our chatrooms</h3>
-    <a href="#">Category 1</a>
-    <a href="#">Category 2</a>
-    <a href="#">Category 3</a>
+    <h3>Discover our chatroom categories</h3>
+        <% @categories.each do |category| %>
+        <li>
+        <%= link_to category, chatrooms_path(category: category) %>
+        </li>
+        <% end %>
     </div>
   </div>
   <div class="chatroom-cards">

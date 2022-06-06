@@ -1,34 +1,45 @@
 <div class="header">
-  <div class="row">
-      <div class="col-sm col-md-6">
+  <div class="d-flex justify-content-between">
+      <div>
         <h2>#<%= @chatroom.name %>
       </div>
-      <div class="col-sm col-md-5">
-      <p class="char-name">You are chatting as <%= current_character.name %></p>
-      </div>
-      <div class="col-sm col-md-1">
-        <%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50 %>
+      <div>
+      <p class="char-name">You are chatting as <%= current_character.name %>   <%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50 %></p>
       </div>
     </div>
 </div>
 
 <div class="row">
+
   <div class="column side chatroom-list">
-      <% @chatrooms.each do |chatroom| %>
+  <div class="links">
+     <% if user_signed_in? %>
+        <%# <li>You are signed in as current_character.name </li> %>
+        <li><%= link_to "My characters", characters_path %></li>
+        <li><%= link_to "Chatrooms", chatrooms_path %></li>
+        <li><%= link_to "Switch character", new_character_session_path %></li>
+        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Sign in", user_session_path %></li>
+      <% end %>
+      <hr>
+  </div>
+
+  <div>
+  <h4>Choose another chatroom</h4>
+        <% @chatrooms.each do |chatroom| %>
       <li>
       <%= link_to chatroom.name, chatroom_path(chatroom) %>
       </li>
       <% end %>
   </div>
+
+
+  </div>
   <div class="column middle chatroom"
       data-controller="chatroom-subscription"
       data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
     >
-    <div class="row">
-      <div class="col-sm-12">
-        <%= link_to 'Choose a different character', new_character_session_path, class: "link-char float-right" %>
-      </div>
-    </div>
     <div class="messages" data-chatroom-subscription-target="messages">
       <% @chatroom.messages.each do |message| %>
       <%= render "messages/message", message: message %>
