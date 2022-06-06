@@ -9,14 +9,19 @@ class ChatroomsController < ApplicationController
   end
 
   def index
-    if params[:category]
-      @chatrooms = Chatroom.where(category: params[:category])
+    if params[:query].present?
+      sql_query = " chatroom.name ILIKE :query "
+      @chatrooms = @chatrooms.where(sql_query, query: "%#{params[:query]}%")
     else
-      @chatrooms = Chatroom.all
+      if params[:category]
+        @chatrooms = Chatroom.where(category: params[:category])
+      else
+        @chatrooms = Chatroom.all
+      end
+      @categories = Chatroom.pluck(:category).uniq
     end
-    @categories = Chatroom.pluck(:category).uniq
   end
-
+  
   def new
     @chatroom = Chatroom.new
   end
