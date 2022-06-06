@@ -9,23 +9,21 @@ html {
 }
 
 body {
-  background-color: #000000;
+  // background-color: #000000;
   font-family: 'Bebas Neue';
-  color: #F5F3F3;
-  margin: 20px 150px;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,1)), url('https://img.freepik.com/free-vector/monochrome-sound-line-waves-abstract-background_1217-3549.jpg?t=st=1653998294~exp=1653998894~hmac=988ff5af872236cfe26c9f194327f11ea9d45f2b61e520b62ae794e4bf049550&w=1480');
+  color: #030303;
+  // background-image: linear-gradient(rgba(206, 86, 1, 0.273), rgba(15, 15, 15, 0.792)), url('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519272/My_utopia_white_mode_1_nk30fj.jpg');
+  background-image: url('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519272/My_utopia_white_mode_1_nk30fj.jpg');
   background-size: cover;
   //background-size: 1300px 105vh;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  top:0;
+.home-container {
+    margin: 20px 150px;
 }
+
 
 .title {
   display: flex;
