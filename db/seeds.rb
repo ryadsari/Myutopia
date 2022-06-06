@@ -105,18 +105,132 @@ mario.photo.attach(io: file, filename: 'mario.png', content_type: 'image/png')
 mario.user = julia
 mario.save
 
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654018744/Mario_-_Super_Mario_Bros._guyxct.png')
+mario = Character.new(name: 'Mario', world: 'Super Mario Bros', race: "Human")
+mario.photo.attach(io: file, filename: 'mario.png', content_type: 'image/png')
+mario.user = julia
+mario.save
+
 puts 'Characters created!'
 
-Character.all.each do |character|
-  @categories = ["roleplay", "science", "entertainment", "education"]
-  character_seed = Chatroom.create(name: "#chatroom_#{character.name}", category: @categories.sample, cover: @images.sample)
-  character_seed.save
-end
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654517301/lost_lore_b0zrfg.jpg')
+lost_lore = Chatroom.new(name: 'Lost Lore', category: 'Fandom')
+lost_lore.photo.attach(io: file, filename: 'lost_lore.png', content_type: 'image/png')
+lost_lore.save
 
-Chatroom.all.each do |chatroom|
-  @files = [URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654500909/roleplay_kquwee.jpg'), URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654500909/education_jmrhw5.jpg'), URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654500909/science_krtc7d.jpg'), URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654500909/entertainment_qm2mx8.jpg')]
-  chatroom_seed = chatroom.photo.attach(io: @files.sample, filename: "#{chatroom.name}.png", content_type: 'image/png')
-  chatroom_seed.save
-end
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654517301/league_of_legends_r6pgol.jpg')
+league_of_legends = Chatroom.new(name: 'League of Legends', category: 'Fandom')
+league_of_legends.photo.attach(io: file, filename: 'league_of_legends.png', content_type: 'image/png')
+league_of_legends.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654517301/middle_earth_au8cb5.jpg')
+middle_earth = Chatroom.new(name: 'Middle Earth', category: 'Fandom')
+middle_earth.photo.attach(io: file, filename: 'middle_earth.png', content_type: 'image/png')
+middle_earth.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654517301/mmo_wars_jwrwbf.png')
+mmo_wars = Chatroom.new(name: 'MMO Wars', category: 'Fandom')
+mmo_wars.photo.attach(io: file, filename: 'mmo_wars.png', content_type: 'image/png')
+mmo_wars.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654517301/the_library_xwa7d4.jpg')
+the_library = Chatroom.new(name: 'The Library', category: 'Fandom')
+the_library.photo.attach(io: file, filename: 'the_library.png', content_type: 'image/png')
+the_library.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654517300/d_d_llvred.jpg')
+dungeonsanddragons = Chatroom.new(name: 'D&D', category: 'Fandom')
+dungeonsanddragons.photo.attach(io: file, filename: 'dungeonsanddragons.png', content_type: 'image/png')
+dungeonsanddragons.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519478/of_hydaelyn_nwua6p.jpg')
+of_hydaelyn = Chatroom.new(name: 'Of Hydaelyn', category: 'Canon')
+of_hydaelyn.photo.attach(io: file, filename: 'of_hydaelyn.png', content_type: 'image/png')
+of_hydaelyn.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519480/azeroth_d8j3kz.png')
+azeroth = Chatroom.new(name: 'Azeroth', category: 'Canon')
+azeroth.photo.attach(io: file, filename: 'azeroth.png', content_type: 'image/png')
+azeroth.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519479/tyria_mbos4l.jpg')
+tyria = Chatroom.new(name: 'Tyria', category: 'Canon')
+tyria.photo.attach(io: file, filename: 'tyria.png', content_type: 'image/png')
+tyria.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519479/asgard_a4fdot.webp')
+asgard = Chatroom.new(name: 'Asgard', category: 'Canon')
+asgard.photo.attach(io: file, filename: 'asgard.png', content_type: 'image/png')
+asgard.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519479/elona_kkg6y4.jpg')
+elona = Chatroom.new(name: 'Elona', category: 'Canon')
+elona.photo.attach(io: file, filename: 'elona.png', content_type: 'image/png')
+elona.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519479/arkesia_fvuavo.jpg')
+arkesia = Chatroom.new(name: 'Arkesia', category: 'Canon')
+arkesia.photo.attach(io: file, filename: 'arkesia.png', content_type: 'image/png')
+arkesia.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519479/anime_madness_fodnc8.jpg')
+anime_madness = Chatroom.new(name: 'Anime Madness', category: 'Original')
+anime_madness.photo.attach(io: file, filename: 'anime_madness.png', content_type: 'image/png')
+anime_madness.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519479/LGBT_e5ekgj.jpg')
+lgbt_zone = Chatroom.new(name: 'LGBT Zone', category: 'Original')
+lgbt_zone.photo.attach(io: file, filename: 'lgbt_zone.png', content_type: 'image/png')
+lgbt_zone.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519479/RPG_tcdyco.webp')
+rpg_zone = Chatroom.new(name: 'RPG', category: 'Original')
+rpg_zone.photo.attach(io: file, filename: 'rpg_zone.png', content_type: 'image/png')
+rpg_zone.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519478/millenial_pc25bk.webp')
+millenial = Chatroom.new(name: 'Millenial', category: 'Original')
+millenial.photo.attach(io: file, filename: 'millenial.png', content_type: 'image/png')
+millenial.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519479/gen_z_h0mp8e.jpg')
+gen_z = Chatroom.new(name: 'Gen Z', category: 'Original')
+gen_z.photo.attach(io: file, filename: 'gen_z.png', content_type: 'image/png')
+gen_z.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519479/the_commonwealth_oftsxf.webp')
+the_commonwealth = Chatroom.new(name: 'The Commonwealth', category: 'Original')
+the_commonwealth.photo.attach(io: file, filename: 'the_commonwealth.png', content_type: 'image/png')
+the_commonwealth.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519479/the_passiflora_gxqjdd.webp')
+the_passiflora = Chatroom.new(name: 'The Passiflora', category: 'NSWF')
+the_passiflora.photo.attach(io: file, filename: 'the_passiflora.png', content_type: 'image/png')
+the_passiflora.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519479/ff14_vlooc9.png')
+ff14 = Chatroom.new(name: 'FF14', category: 'NSWF')
+ff14.photo.attach(io: file, filename: 'ff14.png', content_type: 'image/png')
+ff14.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519478/furry_yipx6y.jpg')
+furry = Chatroom.new(name: 'Furry', category: 'NSWF')
+furry.photo.attach(io: file, filename: 'furry.png', content_type: 'image/png')
+furry.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519478/furry_yipx6y.jpg')
+bdsm = Chatroom.new(name: 'BDSM', category: 'NSWF')
+bdsm.photo.attach(io: file, filename: 'bdsm.png', content_type: 'image/png')
+bdsm.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519479/anime_madness_fodnc8.jpg')
+anime_madness = Chatroom.new(name: 'Anime Madness', category: 'NSWF')
+anime_madness.photo.attach(io: file, filename: 'anime_madness.png', content_type: 'image/png')
+anime_madness.save
+
+file = URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654500909/science_krtc7d.jpg')
+others = Chatroom.new(name: 'Others', category: 'NSWF')
+others.photo.attach(io: file, filename: 'others.png', content_type: 'image/png')
+others.save
 
 puts 'Chatrooms created!'
