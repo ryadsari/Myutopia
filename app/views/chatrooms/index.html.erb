@@ -13,15 +13,18 @@
     </div>
   </div>
   <div class="chatroom-cards">
-    <div class="discover-chatrooms-header d-flex align-items-center justify-content-center bg-image">
-    <h1 class="chatrooms-title">Choose Your Chatroom</h1>
+    <div class="discover-chatrooms-header d-flex flex-column align-items-center justify-content-center bg-image pt-5">
+    <div><h1 class="chatrooms-title">Choose Your Chatroom</h1></div>
+    <div id= "search-form" >
+      <%= render "search_form", chatroom: @chatroom%>
+    </div>
     </div>
       <div class="mt-4 d-flex justify-content-center flex-row flex-wrap p-2">
       <% @chatrooms.each do |chatroom| %>
         <div class="p-2 chatroom-card">
           <%= link_to chatroom_path(chatroom) do %>
             <% if chatroom.photo.attached? %>
-          <div  style="width:400px; height:300px">
+          <div>
             <%= cl_image_tag chatroom.photo.key, height: 180, width: 200, crop: :fill, class: "chatroom-img" %>
           </div>
             <% else %>
