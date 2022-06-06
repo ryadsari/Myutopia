@@ -14,9 +14,9 @@
   </div>
   <div class="chatroom-cards">
     <div class="discover-chatrooms-header d-flex align-items-center justify-content-center bg-image">
-      <h1>Choose Your Chatroom</h1>
+    <h1 class="chatrooms-title">Choose Your Chatroom</h1>
     </div>
-    <div class="mt-4 d-flex justify-content-center flex-row flex-wrap p-2">
+      <div class="mt-4 d-flex justify-content-center flex-row flex-wrap p-2">
       <% @chatrooms.each do |chatroom| %>
         <div class="p-2 chatroom-card">
           <%= link_to chatroom_path(chatroom) do %>
@@ -41,9 +41,7 @@
         </div>
       <% end %>
     </div>
-    <div class="footer">
-      <p>Footer</p>
-    </div>
+
   </div>
 
 
