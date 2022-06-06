@@ -34,11 +34,11 @@
 .sidenav-links {
   padding-top: 50px;
   text-align: center;
+  list-style: none;
 }
 
 /* Change color on hover */
 .sidenav a:hover {
-  background-color: #FF6B00;
   color: #fff;
 }
 
@@ -114,6 +114,9 @@
 @media (max-width: 600px) {
   .row {
     -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  .header {
     flex-direction: column;
   }
   .chatrooms-container {

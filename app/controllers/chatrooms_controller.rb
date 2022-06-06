@@ -9,7 +9,12 @@ class ChatroomsController < ApplicationController
   end
 
   def index
-    @chatrooms = Chatroom.all
+    if params[:category]
+      @chatrooms = Chatroom.where(category: params[:category])
+    else
+      @chatrooms = Chatroom.all
+    end
+    @categories = Chatroom.pluck(:category).uniq
   end
 
   def new

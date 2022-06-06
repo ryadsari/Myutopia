@@ -105,11 +105,18 @@ mario.photo.attach(io: file, filename: 'mario.png', content_type: 'image/png')
 mario.user = julia
 mario.save
 
+puts 'Characters created!'
+
 Character.all.each do |character|
   @categories = ["roleplay", "science", "entertainment", "education"]
-  character_seed = Chatroom.create(name: "#chatroom_#{character.name}", category: @categories.sample)
+  character_seed = Chatroom.create(name: "#chatroom_#{character.name}", category: @categories.sample, cover: @images.sample)
   character_seed.save
 end
 
+Chatroom.all.each do |chatroom|
+  @files = [URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654500909/roleplay_kquwee.jpg'), URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654500909/education_jmrhw5.jpg'), URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654500909/science_krtc7d.jpg'), URI.open('https://res.cloudinary.com/dlzusxobf/image/upload/v1654500909/entertainment_qm2mx8.jpg')]
+  chatroom_seed = chatroom.photo.attach(io: @files.sample, filename: "#{chatroom.name}.png", content_type: 'image/png')
+  chatroom_seed.save
+end
 
-puts 'Characters created. All set!'
+puts 'Chatrooms created!'
