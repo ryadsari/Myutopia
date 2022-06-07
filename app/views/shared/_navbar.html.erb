@@ -1,60 +1,25 @@
-
-  <nav class="navbar navbar-fixed-top">
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark" aria-label="Sixth navbar example" style="padding-right: 5.5em; padding-left: 4em;">
     <div class="container-fluid">
-
-      <div class="title">
-        <%= link_to "MY UTOPIA", home_path, class: "title-second" %>
-
-
-      <div class="options">
-        <ul>
-
-
-        </ul>
-      </div>
-      </div>
-        <div class="dropdown">
-        <button
-          class="btn btn-primary dropdown-toggle new-dropdown"
-          type="button"
-          id="dropdownMenuButton"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-        </button>
-        <ul class="dropdown-menu drop-show" aria-labelledby="dropdownMenuButton" >
-
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
-    <div class="container-fluid" style="padding-right: 4em; padding-left: 4em;">
-      <%= link_to "MY UTOPIA", home_path, class: "title-second" %>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+      <%= link_to "MY UTOPIA", home_path, class: "title-second navbar-brand navbar-title" %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExample05">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <div class="collapse navbar-collapse" id="navbarsExample06">
+        <ul class="navbar-nav me-auto mb-2 mb-xl-0">
           <li class="nav-item">
-             <li><%= link_to "My characters", characters_path, class: "dropdown-item" %></li>
+           <%= link_to "My characters", characters_path, class: "nav-link active navbar-items" %>
           </li>
           <li class="nav-item">
-            <li><%= link_to "Chatrooms", chatrooms_path, class: "dropdown-item" %></li>
+            <%= link_to "Chatrooms", chatrooms_path, class: "nav-link active navbar-items" %>
           </li>
-          <%# <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li> %>
-
-        <h2 class="nav-item" > test</h2>
-
+            </ul>
+          </li>
         </ul>
-          <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+
+
+         <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle drop dropdown-custom" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
             <ul class="dropdown-menu" aria-labelledby="dropdown05">
               <% if user_signed_in? %>
 
@@ -68,11 +33,12 @@
               <li class="dropdown-item">
                 <div class="form-check form-switch form-check-reverse custom-control custom-switch" data-controller="dark-mode">
                   <input class="form-check-input custom-control-input" type="checkbox" id="darkSwitch" />
-                  <label class="form-check-label custom-control-label" for="darkSwitch">Dark Mode </label>
+                  <label class="form-check-label custom-control-label" for="darkSwitch">Light Mode </label>
                 </div>
               </li>
             </ul>
           </div>
+
       </div>
     </div>
   </nav>
