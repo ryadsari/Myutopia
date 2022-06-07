@@ -26,9 +26,13 @@
 
 /* Side navigation links */
 .sidenav a {
-  padding: 16px;
+  padding: 5px;
   text-decoration: none;
   display: block;
+}
+
+.sidenav h3 {
+  color: white;
 }
 
 .sidenav-links {
@@ -50,7 +54,7 @@
 }
 
 .chatroom-cards {
-  margin-left: 130px;
+  margin-left: 235px;
 }
 
 .chatroom-img {
@@ -101,6 +105,10 @@
 }
 .category-name {
   padding-top: 10px;
+}
+
+.chatroom-label {
+  color: grey;
 }
 
 
