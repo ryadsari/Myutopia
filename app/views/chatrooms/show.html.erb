@@ -13,10 +13,6 @@
           <% end %>
         <% end %>
       </div>
-      <div>
-      <p class="char-name">You are chatting as <%= current_character.name %>   <%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50 %></p>
-      </div>
-
 <div class="chatrooms-container">
   <div class="sidenav">
     <div class="sidenav-logo d-flex justify-content-center">
@@ -46,7 +42,7 @@
       </div>
     </div>
   </div>
-  <div class="chatroom-cards">
+  <div class="chat-field">
     <div class="header">
       <div class="d-flex justify-content-between align-items-baseline">
         <div class="chatroom-name">
