@@ -1,0 +1,15 @@
+<div class="container mt-5 pt-5 mb-4">
+<br>
+  <%= link_to 'Back', characters_path, class: 'cv3' %>
+  <br><br>
+  <div class="row">
+    <div class="col-6 m-auto">
+      <div class="turtle-form">
+        <h1 class="h1-title">Edit the Chatroom <%= @character.name %></h1>
+        <div class="mt-3 mb-4">
+          <%= render "form", chatroom: @chatroom %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

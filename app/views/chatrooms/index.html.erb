@@ -6,7 +6,7 @@
     <div class="sidenav-links">
     <div class="links">
      <% if user_signed_in? %>
-        <li>You are signed in as <%= current_character.name %></li>
+        <li><h3>You are signed in as <%= current_character.name %></h3></li>
         <li><%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50, class: "rounded-circle" %></li>
         <li><%= link_to "> My characters", characters_path %></li>
         <li><%= link_to "> Switch character", new_character_session_path %></li>
@@ -16,7 +16,7 @@
       <% end %>
       <hr>
     </div>
-      <h3>Discover our chatroom categories</h3>
+      <h3>Chatroom categories</h3>
       <% @categories.each do |category| %>
       <li>
       <%= link_to category, chatrooms_path(category: category) %>
