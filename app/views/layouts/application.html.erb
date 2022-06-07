@@ -18,6 +18,16 @@
     <% end %>
     <%= render 'shared/flashes' %>
 
+    <% if controller_name == "chatrooms" && action_name == "show" %>
+    <body style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @chatroom.photo.key, height: 300, crop: :fill %>')">
+    </body>
+    <% end %>
+
+
+
+
+
+
     <%= yield %>
 
   </body>

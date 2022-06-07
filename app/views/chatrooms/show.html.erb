@@ -6,7 +6,6 @@
     <div class="sidenav-links">
       <div class="links">
         <% if user_signed_in? %>
-        <%# <li>You are signed in as current_character.name </li> %>
         <li><%= link_to "> My characters", characters_path %></li>
         <li><%= link_to "> Chatrooms", chatrooms_path %></li>
         <li><%= link_to "> Switch character", new_character_session_path %></li>
@@ -16,8 +15,9 @@
         <% end %>
         <hr>
       </div>
-      <div class="choose-chatroom">
-        <h4>Choose another chatroom</h4>
+      <div>
+      <%= link_to "Choose another chatroom", chatrooms_path, class: "choose-chatroom" %>
+      <hr>
         <% @chatrooms.each do |chatroom| %>
         <li>
         <%= link_to chatroom.name, chatroom_path(chatroom) %>
@@ -30,10 +30,10 @@
     <div class="header">
       <div class="d-flex justify-content-between align-items-baseline">
         <div class="chatroom-name">
-          <h2>#chatroom <%= @chatroom.name %>
+          <h2>#<%= @chatroom.name %>
         </div>
         <div class="chatroom-name d-flex justify-content-between align-items-baseline">
-          <p class="char-name">You are chatting as <%= current_character.name %>   <%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50 %></p>
+          <p class="char-name">You are chatting as <%= current_character.name %>   <%= cl_image_tag current_character.photo.key, width: 60, height: 60, crop: :fill, radius: 50, class: "rounded-circle" %></p>
         </div>
       </div>
   </div>

@@ -1,0 +1,35 @@
+  <div class="dashboard-cards">
+    <div class="mt-4 d-flex justify-content-center flex-row flex-wrap p-2">
+      <% @chatrooms.each do |chatroom| %>
+        <div class="p-2 chatroom-card">
+          <%= link_to chatroom_path(chatroom) do %>
+            <% if chatroom.photo.attached? %>
+          <div>
+            <%= cl_image_tag chatroom.photo.key, height: 180, width: 200, crop: :fill, class: "chatroom-img" %>
+          </div>
+            <% else %>
+              <%= image_tag 'https://images.unsplash.com/photo-1585620385456-4759f9b5c7d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', height: 180, width: 200, class: "chatroom-img" %>
+            <% end %>
+            <%= link_to 'Show', chatroom, class: "btn button-show" %>
+            <%= link_to 'Edit', edit_chatroom_path(chatroom), class: "btn button-edit" %>
+            <%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn button-delete"%>
+          <div>
+            <p class="category-name"><%= chatroom.name %><span class="chatroom-label"> #chatroom</span></p>
+
+              <% if chatroom.category.nil? %>
+                <p class="category"><%= link_to "Add category", edit_chatroom_path %></p>
+              <% else %>
+                <p class="category">Category: <%= chatroom.category %></p>
+              <% end %>
+
+          </div>
+            <% end %>
+        </div>
+
+      <% end %>
+    </div>
+
+  </div>
+
+
+</div>

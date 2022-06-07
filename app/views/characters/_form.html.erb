@@ -1,0 +1,22 @@
+<%= simple_form_for(@character) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="cv5">
+    <%= f.input :name, class: 'form-control form-border', placeholder: 'What shall the name of your new character be ?' %>
+    </div>
+    <div class="cv5">
+    <%= f.input :world, class: 'form-control form-border cv6', placeholder: 'Where does your character from ?' %>
+    </div>
+    <div class="cv5">
+    <%= f.input :race, class: 'form-control form-border cv6',placeholder: 'What race is your character ?' %>
+    </div>
+    <div class="cv5">
+    <%= f.input :photo, as: :file, class: 'form-control form-border cv6' %>
+    </div>
+    <div class="cv5">
+    <%= link_to 'Cancel', characters_path , class: 'btn  ms-2 submit-button cv5' %>
+    <%= f.submit class: 'btn nav-btn cv5' %>
+    </div>
+  </div>
+<% end %>
