@@ -1,7 +1,16 @@
 <div class="header">
   <div class="d-flex justify-content-between">
       <div>
-        <h2>#<%= @chatroom.name %>
+        <h2>#<%= @chatroom.name %></h2>
+        <% if current_character.favorited?(@chatroom) %>
+          <%= link_to chatroom_unfavourite_path(@chatroom), method: 'delete' do %>
+            <i class="fa-solid fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to chatroom_favourites_path(@chatroom), method: 'post' do %>
+            <i class="fa-regular fa-heart"></i>
+          <% end %>
+        <% end %>
       </div>
       <div>
       <p class="char-name">You are chatting as <%= current_character.name %>   <%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50 %></p>

@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   resources :character_sessions, only: [:new, :create]
   resources :chatrooms, only: [:show, :index, :new, :create] do
     resources :messages, only: :create
+    resources :favourites, only: [:create]
+    delete '/unfavourite', to: 'favourites#destroy'
   end
 end

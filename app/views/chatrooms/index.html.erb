@@ -22,6 +22,15 @@
       <div class="mt-4 d-flex justify-content-center flex-row flex-wrap p-2">
       <% @chatrooms.each do |chatroom| %>
         <div class="p-2 chatroom-card">
+         <% if current_character.favorited?(chatroom) %>
+          <%= link_to chatroom_unfavourite_path(chatroom), method: 'delete' do %>
+            <i class="fa-solid fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to chatroom_favourites_path(chatroom), method: 'post' do%>
+            <i class="fa-regular fa-heart"></i>
+          <% end %>
+        <% end %>
           <%= link_to chatroom_path(chatroom) do %>
             <% if chatroom.photo.attached? %>
           <div>
