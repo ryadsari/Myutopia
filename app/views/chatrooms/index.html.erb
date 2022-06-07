@@ -4,12 +4,27 @@
       <a href="/home">MY<br><span class="title-second">UTOPIA</span></a>
     </div>
     <div class="sidenav-links">
-    <h3>Discover our chatroom categories</h3>
-        <% @categories.each do |category| %>
-        <li>
-        <%= link_to category, chatrooms_path(category: category) %>
-        </li>
-        <% end %>
+    <div class="links">
+     <% if user_signed_in? %>
+        <%# <li>You are signed in as current_character.name </li> %>
+        <li><%= link_to "> My characters", characters_path %></li>
+        <li><%= link_to "> Chatrooms", chatrooms_path %></li>
+        <li><%= link_to "> Switch character", new_character_session_path %></li>
+        <li><%= link_to "> Sign out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "> Sign in", user_session_path %></li>
+      <% end %>
+      <hr>
+    </div>
+      <h3>Discover our chatroom categories</h3>
+      <% @categories.each do |category| %>
+      <li>
+      <%= link_to category, chatrooms_path(category: category) %>
+      </li>
+      <% end %>
+      <li>
+      <%= link_to "All", chatrooms_path %>
+      </li>
     </div>
   </div>
   <div class="chatroom-cards">
@@ -31,7 +46,7 @@
               <%= image_tag 'https://images.unsplash.com/photo-1585620385456-4759f9b5c7d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', height: 180, width: 200, class: "chatroom-img" %>
             <% end %>
           <div>
-            <p class="category-name"><%= chatroom.name %></p>
+            <p class="category-name"><%= chatroom.name %><span class="chatroom-label"> #chatroom</span></p>
 
               <% if chatroom.category.nil? %>
                 <p class="category"><%= link_to "Add category", edit_chatroom_path %></p>
