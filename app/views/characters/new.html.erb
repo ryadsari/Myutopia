@@ -2,7 +2,7 @@
 <body class="new_chara_body">
   <%= link_to 'Back', characters_path, class: 'cv3' %>
   <h1 class="cv5">Add a new Character</h1>
-    <div id='dumbcss'>
+    <div id='dumbcss' class="new-character">
       <%= simple_form_for @character do |f| %>
         <div class="cv5">
           <%= f.input :name, class: 'form-control form-border', placeholder: 'What shall the name of your new character be ?' %>

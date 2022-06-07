@@ -68,7 +68,7 @@ p.char-name {
 .char-name {
   float: right;
   line-height: 40px;
-  color:grey;
+  color:white;
 }
 
 .chatroom-list {
@@ -106,15 +106,25 @@ p.char-name {
   -ms-flex: 2;
   flex: 2;
 }
-
+.chatroom-form {
+  flex-direction: column;
+}
 .chatroom-name h2 {
-  color: grey;
+  color: white;
 }
 
 .chatroom-name {
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.message-time {
+  font-size: 12px;
+  font-style: italic;
+  color: grey;
+  text-transform: lowercase;
+}
+
 
 
 /* Responsive layout - makes the columns stack on top of each other instead of next to each other */

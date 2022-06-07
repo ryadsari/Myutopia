@@ -1,6 +1,6 @@
 class ChatroomsController < ApplicationController
   before_action :skip_authorization
-  # before_action :logged_in_character - will this be necessary to display favourite chatrooms?
+  before_action :logged_in_character
 
   def show
     @chatroom = Chatroom.find(params[:id])
