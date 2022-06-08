@@ -7,12 +7,12 @@
     <div class="links">
      <% if user_signed_in? %>
         <li><h3>You are signed in as <%= current_character.name %></h3></li>
-        <li><%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50, class: "rounded-circle" %></li>
-        <li><%= link_to "> My characters", characters_path %></li>
-        <li><%= link_to "> Switch character", new_character_session_path %></li>
-        <li><%= link_to "> Sign out", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "> Switch Character", new_character_session_path %></li>
+        <li><%= link_to "> Add a new Chatroom", new_chatroom_path %></li>
+        <li><%= link_to "> Delete your Chatrooms", dashboard_path %></li>
+        <li><%= link_to "> Sign Out", destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to "> Sign in", user_session_path %></li>
+        <li><%= link_to "> Sign In", user_session_path %></li>
       <% end %>
       <hr>
     </div>
@@ -27,36 +27,25 @@
       </li>
     </div>
   </div>
-  <div class="chatroom-cards">
+  <div class="chatrooms-content">
     <div class="discover-chatrooms-header d-flex flex-column align-items-center justify-content-center bg-image pt-5">
       <div>
-      <h1 class="chatrooms-title">Choose Your Chatroom</h1>
+        <h1 class="chatrooms-title">Choose Your Chatroom</h1>
+        </div>
+        <div id= "search-form" >
+          <%= render "search_form", chatroom: @chatroom%>
+        </div>
       </div>
-      <div id= "search-form" >
-        <%= render "search_form", chatroom: @chatroom%>
-      </div>
-    </div>
-    <div class="mt-4 d-flex justify-content-center flex-row flex-wrap p-2">
-      <% @chatrooms.each do |chatroom| %>
-        <div class="p-2 chatroom-card">
-          <% if current_character.favorited?(chatroom) %>
+      <div class="chatroom-cards d-flex justify-content-start flex-row flex-wrap p-2 mb-5">
+        <% @chatrooms.each do |chatroom| %>
+          <div class="p-2 chatroom-card">
+            <% if current_character.favorited?(chatroom) %>
             <%= link_to chatroom_unfavourite_path(chatroom), method: 'delete' do %>
               <i class="fa-solid fa-heart"></i>
             <% end %>
-
-          <div>
-            <p class="category-name"><%= chatroom.name %></p>
-
-              <% if chatroom.category.nil? %>
-                <p class="category"><%= link_to "Add category", edit_chatroom_path %></p>
-              <% else %>
-                <p class="category">Category: <%= chatroom.category %></p>
-              <% end %>
-
-
+            <% else %>
             <%= link_to chatroom_favourites_path(chatroom), method: 'post' do%>
               <i class="fa-regular fa-heart"></i>
-
             <% end %>
           <% end %>
           <%= link_to chatroom_path(chatroom) do %>
