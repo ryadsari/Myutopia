@@ -88,6 +88,12 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-blend-mode: overlay;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-position-x: 44px;
+  background-position-y: -390px;
 }
 
 .chatrooms-title {

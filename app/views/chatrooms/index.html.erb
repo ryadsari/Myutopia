@@ -43,9 +43,20 @@
             <%= link_to chatroom_unfavourite_path(chatroom), method: 'delete' do %>
               <i class="fa-solid fa-heart"></i>
             <% end %>
-          <% else %>
+
+          <div>
+            <p class="category-name"><%= chatroom.name %></p>
+
+              <% if chatroom.category.nil? %>
+                <p class="category"><%= link_to "Add category", edit_chatroom_path %></p>
+              <% else %>
+                <p class="category">Category: <%= chatroom.category %></p>
+              <% end %>
+
+
             <%= link_to chatroom_favourites_path(chatroom), method: 'post' do%>
               <i class="fa-regular fa-heart"></i>
+
             <% end %>
           <% end %>
           <%= link_to chatroom_path(chatroom) do %>
