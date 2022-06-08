@@ -1,35 +1,33 @@
-<body class="charater_index_body">
-
-  <div class="main-container">
-      <div id= "search-form" >
-        <%= render "search_form", character: @character%>
-      </div>
-
-      <% @characters.each do |character| %>
-          <%= link_to character_path(character), class: "container_chara_card" do %>
-            <% if character.photo.attached? %>
-              <div  class="card_photo" style="background-image: url(<%= cl_image_path(character.photo.key) %>)"></div>
-              <% else %>
-                <%= image_tag 'https://res.cloudinary.com/dlzusxobf/image/upload/v1653923867/development/character_j1ujrb.jpg' %>
-              <% end %>
-
-              <div class="card_text">
-              <h2> name : <%= character.name %> </h2>
-              <h2> race : <%= character.race %> </h2>
-              <h2> From : <%= character.world %> </h2>
-            </div>
-            <div><%= link_to 'Show', character, class: "btn btn-success" %>
-            <%= link_to 'Edit', edit_character_path(character), class: "btn btn-primary" %>
-            <%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%>
-            </div>
-
-            <% end %>
-      <% end %>
-
+<div class="characters-header">
+  <div>
+    <h1 class="chatrooms-title">Search the characters</h1>
   </div>
+  <div id= "search-form" >
+      <%= render "search_form", character: @character %>
+  </div>
+</div>
 
-  <br>
-  <br>
-  <br>
-
-</body>
+<div class="flip-cards d-flex justify-content-around align-items-center mb-5 mt-5 pl-5 pr-5">
+  <% @characters.each do |character| %>
+    <%= link_to character_path(character) do %>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <% if character.photo.attached? %>
+            <%= cl_image_tag character.photo.key, width: 200, height: 200, crop: :fill, radius: 10 %>
+          <% else %>
+            <%= image_tag 'https://res.cloudinary.com/dlzusxobf/image/upload/v1653923867/development/character_j1ujrb.jpg' %>
+          <% end %>
+        </div>
+        <div class="flip-card-back">
+          <div class="flip-card-info d-flex flex-column align-items-center pt-3">
+            <p> name : <%= character.name %> </p>
+            <p> race : <%= character.race %> </p>
+            <p> From : <%= character.world %> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
