@@ -18,6 +18,11 @@
               <h2> race : <%= character.race %> </h2>
               <h2> From : <%= character.world %> </h2>
             </div>
+            <div><%= link_to 'Show', character, class: "btn btn-success" %>
+            <%= link_to 'Edit', edit_character_path(character), class: "btn btn-primary" %>
+            <%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%>
+            </div>
+
             <% end %>
       <% end %>
 

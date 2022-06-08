@@ -3,4 +3,5 @@ class Character < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_one_attached :photo
   validates :name, presence: true, length: { minimum: 6 }
+  acts_as_favoritor
 end

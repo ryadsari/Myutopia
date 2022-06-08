@@ -22,13 +22,14 @@ class ChatroomsController < ApplicationController
 
   def new
     @chatroom = Chatroom.new
+    @categories = Chatroom.pluck(:category).uniq
   end
 
   def create
     @chatroom = Chatroom.new(chatroom_params)
     if @chatroom.save
       flash[:success] = "Chatroom has been created!"
-      redirect_to @chatroom
+      redirect_to chatrooms_path
     else
       render 'new'
     end
@@ -49,14 +50,13 @@ class ChatroomsController < ApplicationController
   end
 
   def destroy
-    if @chatroom
-      @chatroom.destroy
-      flash[:success] = "Chatroom has been deleted"
-    else
-      flash[:alert] = "Error"
-    end
-    redirect_to root_path
+    @chatroom = Chatroom.find(params[:id])
+    @chatroom.destroy
+    flash[:success] = "Chatroom has been deleted"
+    redirect_to dashboard_path
   end
+
+
 
   private
 

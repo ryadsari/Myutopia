@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
   def logged_in_character
     unless character_logged_in?
       store_location
-      flash[:danger] = "Please choose a character to roleplay with"
+      flash[:danger] = "Please choose a character"
       redirect_to new_character_session_path
     end
   end

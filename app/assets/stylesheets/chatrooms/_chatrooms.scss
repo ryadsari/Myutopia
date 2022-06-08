@@ -3,8 +3,8 @@
 }
 
 .chatrooms-container {
-  min-width: 1000px;
   width: 100%;
+  // margin-left: 185px;
 }
 
 .sidenav {
@@ -24,6 +24,10 @@
 }
 
 
+.choose-chatroom {
+  color: white;
+}
+
 /* Side navigation links */
 .sidenav a {
   padding: 5px;
@@ -33,10 +37,11 @@
 
 .sidenav h3 {
   color: white;
+  font-size: 1.2rem;
 }
 
 .sidenav-links {
-  padding-top: 50px;
+  padding-top: 30px;
   text-align: center;
   list-style: none;
 }
@@ -54,13 +59,18 @@
 }
 
 .chatroom-cards {
-  margin-left: 235px;
+  margin-left: 240px;
 }
+
 
 .chatroom-img {
   border-radius: 10px;
   object-fit: cover;
   border: 1px solid;
+}
+
+.chatroom-img:hover {
+  box-shadow: rgba(244, 245, 246, 0.2) 0px 8px 24px;
 }
 
 *, *::before, *::after {
@@ -73,10 +83,9 @@
   font-size: 35px;
   width:100%;
   padding-bottom: 100px;
-  border-radius: 20px;
-  background-size: cover;
   height: 150px;
-  background-image: url("https://res.cloudinary.com/dlzusxobf/image/upload/v1654597389/22033_uve6v1.jpg"), linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2));
+  background-image: url("https://res.cloudinary.com/dlzusxobf/image/upload/v1654614880/17973903_nggie9.jpg"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+  background-size: cover;
   background-blend-mode: overlay;
 
   background-repeat: no-repeat;
@@ -89,6 +98,7 @@
 .chatrooms-title {
   font-size: 68px;
   color: white;
+  letter-spacing: 0.5rem;
 }
 
 /* Container for flexboxes */
