@@ -71,10 +71,13 @@
   font-size: 1.6rem;
 }
 
+.chat-container {
+  margin-left: 240px;
+}
 
 .column.middle.chatroom {
   flex: 5 !important;
-  height: 16em;
+  height: 22em;
   color: white
 }
 
