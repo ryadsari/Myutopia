@@ -7,12 +7,12 @@
     <div class="links">
      <% if user_signed_in? %>
         <li><h3>You are signed in as <%= current_character.name %></h3></li>
-        <li><%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50, class: "rounded-circle" %></li>
-        <li><%= link_to "> My characters", characters_path %></li>
-        <li><%= link_to "> Switch character", new_character_session_path %></li>
-        <li><%= link_to "> Sign out", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "> Switch Character", new_character_session_path %></li>
+        <li><%= link_to "> Add a new Chatroom", new_chatroom_path %></li>
+        <li><%= link_to "> Delete your Chatrooms", dashboard_path %></li>
+        <li><%= link_to "> Sign Out", destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to "> Sign in", user_session_path %></li>
+        <li><%= link_to "> Sign In", user_session_path %></li>
       <% end %>
       <hr>
     </div>
@@ -36,7 +36,7 @@
         <%= render "search_form", chatroom: @chatroom%>
       </div>
     </div>
-    <div class="mt-4 d-flex justify-content-center flex-row flex-wrap p-2">
+    <div class="mt-4 d-flex justify-content-start flex-row flex-wrap p-2 mb-5">
       <% @chatrooms.each do |chatroom| %>
         <div class="p-2 chatroom-card">
           <% if current_character.favorited?(chatroom) %>
