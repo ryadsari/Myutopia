@@ -130,11 +130,10 @@ body {
 }
 
 .button-primary:hover{
-  background-position: 100% 0;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-  color: #F5F3F3;
+  color: #ff6b00 !important;
+  background-image: linear-gradient(to right, #201e1e, #201e1e, #201e1e, #201e1e) !important;
+  transition: 1s !important;
+  box-shadow: 0 0 0.5em #FF6B00 !important;
 }
 
 .btn-hover:focus {
