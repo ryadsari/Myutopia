@@ -1,19 +1,17 @@
 
-<div class="header">
-  <div class="d-flex justify-content-between">
-      <div>
-        <h2>#<%= @chatroom.name %></h2>
-        <% if current_character.favorited?(@chatroom) %>
-          <%= link_to chatroom_unfavourite_path(@chatroom), method: 'delete' do %>
-            <i class="fa-solid fa-heart"></i>
-          <% end %>
-        <% else %>
-          <%= link_to chatroom_favourites_path(@chatroom), method: 'post' do %>
-            <i class="fa-regular fa-heart"></i>
-          <% end %>
-        <% end %>
-      </div>
-<div class="chatrooms-container">
+<div class="chat-header">
+    <h2>#<%= @chatroom.name %></h2>
+    <% if current_character.favorited?(@chatroom) %>
+      <%= link_to chatroom_unfavourite_path(@chatroom), method: 'delete' do %>
+        <i class="fa-solid fa-heart"></i>
+      <% end %>
+    <% else %>
+      <%= link_to chatroom_favourites_path(@chatroom), method: 'post' do %>
+        <i class="fa-regular fa-heart"></i>
+      <% end %>
+    <% end %>
+</div>
+<div class="chat-container">
   <div class="sidenav">
     <div class="sidenav-logo d-flex justify-content-center">
       <a href="/home">MY<br><span class="title-second">UTOPIA</span></a>
@@ -58,19 +56,18 @@
       data-controller="chatroom-subscription"
       data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
     >
-    <div class="messages" data-chatroom-subscription-target="messages">
-      <% @chatroom.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
-      <% end %>
-    </div>
-      <%= simple_form_for [@chatroom, @message],
-        remote: true,
-        html: {data: {action: "ajax:success->chatroom-subscription#resetForm"}, class: "d-flex" } do |f|
-      %>
-        <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", wrapper_html: {class: "flex-grow-1"} %>
-        <%= f.submit "Send", class: "btn button-primary" %>
-      <% end %>
+      <div class="messages" data-chatroom-subscription-target="messages">
+        <% @chatroom.messages.each do |message| %>
+        <%= render "messages/message", message: message %>
+        <% end %>
+      </div>
+        <%= simple_form_for [@chatroom, @message],
+          remote: true,
+          html: {data: {action: "ajax:success->chatroom-subscription#resetForm"}, class: "d-flex" } do |f|
+        %>
+          <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", wrapper_html: {class: "flex-grow-1"} %>
+          <%= f.submit "Send", class: "btn button-primary" %>
+        <% end %>
     </div>
   </div>
-
 </div>
