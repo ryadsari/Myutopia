@@ -29,47 +29,50 @@
   </div>
   <div class="chatroom-cards">
     <div class="discover-chatrooms-header d-flex flex-column align-items-center justify-content-center bg-image pt-5">
-    <div><h1 class="chatrooms-title">Choose Your Chatroom</h1></div>
-    <div id= "search-form" >
-      <%= render "search_form", chatroom: @chatroom%>
+      <div>
+      <h1 class="chatrooms-title">Choose Your Chatroom</h1>
+      </div>
+      <div id= "search-form" >
+        <%= render "search_form", chatroom: @chatroom%>
+      </div>
     </div>
-    </div>
-      <div class="mt-4 d-flex justify-content-center flex-row flex-wrap p-2">
+    <div class="mt-4 d-flex justify-content-center flex-row flex-wrap p-2">
       <% @chatrooms.each do |chatroom| %>
         <div class="p-2 chatroom-card">
-         <% if current_character.favorited?(chatroom) %>
-          <%= link_to chatroom_unfavourite_path(chatroom), method: 'delete' do %>
-            <i class="fa-solid fa-heart"></i>
+          <% if current_character.favorited?(chatroom) %>
+            <%= link_to chatroom_unfavourite_path(chatroom), method: 'delete' do %>
+              <i class="fa-solid fa-heart"></i>
+            <% end %>
+          <% else %>
+            <%= link_to chatroom_favourites_path(chatroom), method: 'post' do%>
+              <i class="fa-regular fa-heart"></i>
+            <% end %>
           <% end %>
-        <% else %>
-          <%= link_to chatroom_favourites_path(chatroom), method: 'post' do%>
-            <i class="fa-regular fa-heart"></i>
-          <% end %>
-        <% end %>
           <%= link_to chatroom_path(chatroom) do %>
-            <% if chatroom.photo.attached? %>
-          <div>
-            <%= cl_image_tag chatroom.photo.key, height: 180, width: 200, crop: :fill, class: "chatroom-img" %>
-          </div>
-            <% else %>
-              <%= image_tag 'https://images.unsplash.com/photo-1585620385456-4759f9b5c7d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', height: 180, width: 200, class: "chatroom-img" %>
-            <% end %>
-          <div>
-            <p class="category-name"><%= chatroom.name %><span class="chatroom-label"> #chatroom</span></p>
-
-              <% if chatroom.category.nil? %>
-                <p class="category"><%= link_to "Add category", edit_chatroom_path %></p>
-              <% else %>
-                <p class="category">Category: <%= chatroom.category %></p>
-              <% end %>
-
-          </div>
-            <% end %>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <% if chatroom.photo.attached? %>
+                  <%= cl_image_tag chatroom.photo.key, height: 200, width: 200, crop: :fill, radius: 10, class: "chatroom-img" %>
+                  <% else %>
+                  <%= image_tag 'https://images.unsplash.com/photo-1585620385456-4759f9b5c7d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', height: 180, width: 200, class: "chatroom-img" %>
+                  <% end %>
+                </div>
+                <div class="flip-card-back">
+                  <div class="flip-card-info d-flex flex-column align-items-center pt-3">
+                    <p class="category-name"><span class="chatroom-label">#chatroom </span><%= chatroom.name %></p>
+                    <% if chatroom.category.nil? %>
+                      <p class="category"><%= link_to "Add category", edit_chatroom_path %></p>
+                    <% else %>
+                      <p class="category-name"><span class="chatroom-label">category: </span><%= chatroom.category %></p>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
-
   </div>
-
-
 </div>
