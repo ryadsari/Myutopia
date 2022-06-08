@@ -2,4 +2,72 @@
   // background-color: #111 !important;
   background-image: url('https://res.cloudinary.com/dlzusxobf/image/upload/v1654519272/My_utopia_white_mode_1_nk30fj.jpg') !important;
   color: #030303;
+
+
+
+  // cards
+
+    *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+  .container {
+    position:absolute;
+    width:100%;
+    height:100vh;
+    background: #625f5f;
+  }
+  .card {
+    width: 60%;
+    padding: auto;
+    text-align: center;
+    background: #625f5f;
+    border-radius: 10px;
+    box-shadow: 25px 25px 10px #b9b2b2, -15px -15px 10px #b9b2b2;
+    &__container {
+      display: grid;
+      width:100%;
+      height:100%;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      justify-items: center;
+      color: rgb(255, 255, 255);
+    }
+    &__content {
+      width: 90%;
+      background: #625f5f;
+      margin: 10px auto;
+      border-radius: 5px;
+      padding: 20px;
+      cursor: pointer;
+      box-shadow:  16px 16px 10px #776969,
+        -16px -16px 10px #776969;
+        transition: 0.3s all ease-in-out;
+      transition: 0.3s all ease-in-out;
+      &:hover{
+        margin-top:-10px;
+      }
+    }
+    &__header {
+      text-transform: uppercase;
+      font-size: 20px;
+      margin: 40px auto;
+    }
+  }
+
+  .info-titles {
+    color: #FF6B00;
+  }
+
+
+  // navbar
+
+  .ctomus-navbar {
+    background-color: #212529;
+    color: #FF6B00;
+  }
+
 }
