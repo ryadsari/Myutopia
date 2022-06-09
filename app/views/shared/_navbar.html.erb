@@ -8,28 +8,30 @@
       <div class="collapse navbar-collapse" id="navbarsExample06">
         <ul class="navbar-nav me-auto mb-2 mb-xl-0">
           <li class="nav-item">
-           <%= link_to "My characters", characters_path, class: "nav-link active navbar-items" %>
+            <% if user_signed_in? %>
+
+           <%= link_to "My characters", new_character_session_path, class: "nav-link active navbar-items" %>
           </li>
           <li class="nav-item">
             <%= link_to "Chatrooms", chatrooms_path, class: "nav-link active navbar-items" %>
           </li>
+          <% else %>
+              <li><%= link_to "Sign up", new_user_registration_path, class: "nav-link active navbar-items" %></li>
+              <li><%= link_to "Sign in", user_session_path, class: "nav-link active navbar-items" %></li>
+          <% end %>
             </ul>
           </li>
         </ul>
 
 
+        <% if user_signed_in? %>
          <div class="nav-item dropdown">
             <a class="nav-link dropdown-toggle drop dropdown-custom" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
             <ul class="dropdown-menu" aria-labelledby="dropdown05">
-              <% if user_signed_in? %>
 
                 <li><%= link_to "Switch character", new_character_session_path, class: "dropdown-item" %></li>
                 <li><%= link_to "My Dashboard", dashboard_path, class: "dropdown-item" %></li>
                 <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
-
-              <% else %>
-                <li><%= link_to "Sign in", user_session_path, class: "dropdown-item" %></li>
-              <% end %>
 
               <li class="dropdown-item">
                 <div class="form-check form-switch form-check-reverse custom-control custom-switch" data-controller="dark-mode">
@@ -39,6 +41,7 @@
               </li>
             </ul>
           </div>
+        <% end %>
 
       </div>
     </div>
