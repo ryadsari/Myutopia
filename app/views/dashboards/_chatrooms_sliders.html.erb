@@ -5,11 +5,18 @@
       <%= link_to characters_path do %>
         <div class="character">
           <p class="character-name"><%= chatroom.name %></p>
-          <img class="character-avatar" src="assets/people1.png">
+          <%= cl_image_tag chatroom.photo.key %>
         </div>
       <% end %>
     <% end %>
-
+    <% (5- @chatrooms.count).times do %>
+      <%= link_to characters_path do %>
+        <div class="character">
+          <p class="character-name">.</p>
+          <img class="character-avatar" src="assets/plus-sign2">
+        </div>
+      <% end %>
+    <% end %>
   </div>
   <button class="btn btn-prev carousel-control"  data-action="click->carousel#moveBackwards"><</button>
 </div>

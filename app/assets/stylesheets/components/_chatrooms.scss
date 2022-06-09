@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+.chatrooms-container {
+  min-width: 1000px;
+  width: 100%;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position:fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+.sidenav-logo {
+  color: white;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+  padding: 5px;
+  text-decoration: none;
+  display: block;
+}
+
+.sidenav h3 {
+  color: white;
+}
+
+.sidenav-links {
+  padding-top: 50px;
+  text-align: center;
+  list-style: none;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  color: #fff;
+}
+
+/* Style the content */
+
+.chatroom-card {
+  width: 220px;
+  text-align: center;
+}
+
+.chatroom-cards {
+  width: 1000px;
+  position: absolute;
+  left: 270px;
+}
+
+.chatroom-img {
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid;
+}
+
+*, *::before, *::after {
+  box-sizing: content-box;
+}
+
+/* Style the header */
+.discover-chatrooms-header {
+  text-align: center;
+  font-size: 35px;
+  width:100%;
+  padding-bottom: 100px;
+  border-radius: 20px;
+  background-size: cover;
+  height: 150px;
+  background-image: url("https://images.unsplash.com/photo-1636487658623-eb8f5ae60770?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+  background-blend-mode: overlay;
+}
+
+.chatrooms-title {
+  font-size: 68px;
+  color: white;
+}
+
+/* Container for flexboxes */
+.row {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.category {
+  color: #f1f1f1;
+}
+.category-name {
+  padding-top: 10px;
+}
+
+.chatroom-label {
+  color: grey;
+}
+
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .chatrooms-container {
+    min-width: 100%;
+  }
+}

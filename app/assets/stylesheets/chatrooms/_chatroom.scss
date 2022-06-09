@@ -19,7 +19,6 @@
 
   .messages {
     height: 100%;
-    padding: 1rem;
     overflow-y: auto;
     border: 1px solid #e9ecef;
     background-color: black;
@@ -93,9 +92,9 @@ p.char-name {
 }
 
 .char-name {
-  float: right;
   line-height: 40px;
   color:white;
+  display: flex;
 }
 
 .chatroom-list {

@@ -1,17 +1,19 @@
 
 
-.main-title {
-  display: flex;
-  justify-content: center;
-  padding: 40px 0;
-  position: 50px;
-}
+// .main-title {
+//   display: flex;
+//   justify-content: center;
+//   padding: 40px 0;
+//   position: 50px;
+// }
 
 .dashboard-container {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-column-gap: 10px;
   justify-content: space-between;
+  display: flex;
+  justify-content: center;
 }
 
 .container-title {
@@ -41,6 +43,10 @@
   margin-bottom: 22px;
 }
 
+.character:hover p{
+  color: #FF6B00;
+}
+
 .character-name {
   color: white;
   text-decoration: none;
@@ -51,7 +57,8 @@
 
 .character-avatar {
   border-radius: 6px;
-  width: 100%;
+  width: 175px;
+  height: 175px;
 }
 
 .chatrooms-container-before {
@@ -151,4 +158,48 @@
 .btn-next {
   top: 45%;
   right: 2%;
+}
+
+
+.character-container {
+  display: flex;
+  margin: 50px 90px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dashboard-title {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  letter-spacing: 1rem;
+}
+
+.dashboard-main-container {
+  margin: 100px 0;
+}
+
+.dashboard-container {
+  margin: 100px 0;
+}
+
+.character-title {
+  display: flex;
+  justify-content: center;
+}
+
+.greyed {
+  opacity: 0.7;
+}
+
+.fa-plus-large {
+  font-size: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.fa-plus-large:hover {
+  color: #FF6B00;
 }

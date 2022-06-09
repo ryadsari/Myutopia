@@ -1,19 +1,48 @@
-<div class="main-title">
-  <h1>Dashboard</h1>
-</div>
-<div class="dashboard-container">
-  <div class="dashboard-left-container ">
-    <div class="characters-container-before ">
-      <div class="container-title">
-        <h2>Your Characters</h2>
+<div class="dashboard-main-container">
+  <div class="dashboard-title">
+    <h1>Dashboard</h2>
+  </div>
+  <div class="dashboard-container">
+    <div class="dashboard-character-container">
+      <div class="character-title">
+        <h3>Your Characters</h3>
       </div>
-      <%= render "characters_slider" %>
-    </div>
-    <div class="characters-container-before ">
-      <div class="container-title">
-        <h2>Your Chatrooms</h2>
+      <div class="character-container">
+        <% @characters.each do |character| %>
+          <%= link_to characters_path do %>
+            <div class="character">
+              <%= cl_image_tag character.photo.key, class: "character-avatar" %>
+              <p class="character-name"><%= character.name %></p>
+            </div>
+          <% end %>
+        <% end %>
+        <% (5- @characters.count).times do %>
+          <%= link_to characters_path do %>
+            <div class="character">
+              <i class="fa-solid fa-plus-large character-avatar">+</i>
+              <p class="character-name"></p>
+            </div>
+          <% end %>
+        <% end %>
       </div>
-      <%= render "chatrooms_cards" %>
+
     </div>
   </div>
 </div>
+<div class="dashboard-container">
+    <div class="dashboard-character-container">
+      <div class="character-title">
+        <h3>Your Chatrooms</h3>
+      </div>
+      <div class="character-container">
+        <% @chatrooms.each do |chatroom| %>
+          <%= link_to chatrooms_path do %>
+            <div class="character">
+              <%= cl_image_tag chatroom.photo.key, class: "character-avatar" %>
+              <p class="character-name"><%= chatroom.name %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
