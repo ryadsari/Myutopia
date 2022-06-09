@@ -23,7 +23,7 @@
     overflow-y: auto;
     border: 1px solid #e9ecef;
     background-color: black;
-    opacity: 0.7;
+    opacity: 0.8;
   }
 
   .message_content {
@@ -77,7 +77,7 @@
 
 .column.middle.chatroom {
   flex: 5 !important;
-  height: 22em;
+  height: 30em;
   color: white
 }
 
@@ -127,13 +127,23 @@ p.char-name {
   flex: 2;
 }
 
-.chatroom-name h2 {
-  color: white;
-}
-
 .chatroom-name {
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.chatroom-character-name {
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 0.5;
+
+  li {
+    list-style: none;
+  }
+}
+
+.chatroom-name h2 {
+  color: white;
 }
 
 .message-time {
@@ -142,6 +152,12 @@ p.char-name {
   color: grey;
   text-transform: lowercase;
 }
+
+.chatroom-like-heart {
+  padding-left: 15px;
+}
+
+
 
 
 

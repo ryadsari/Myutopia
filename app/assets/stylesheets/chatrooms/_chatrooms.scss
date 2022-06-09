@@ -44,6 +44,7 @@
   padding-top: 30px;
   text-align: center;
   list-style: none;
+  line-height: 1.2;
 }
 
 /* Change color on hover */
@@ -63,7 +64,7 @@
 }
 
 .chatroom-cards {
-  padding: 1em;
+  padding: 3em;
 }
 
 
@@ -139,6 +140,7 @@
   height: 200px;
   perspective: 1000px;
   border-radius: 10px;
+  margin-bottom: 4rem;
 }
 
 .flip-card-inner {
@@ -173,7 +175,7 @@
 }
 
 .flip-card-back {
-  background-color: rgb(228, 227, 227);
+  background-color: #170100;
   color: #FF6B00;
   transform: rotateY(180deg);
   font-size: 1.2rem;
@@ -187,6 +189,10 @@
 
 .flip-card-info {
   padding:5px;
+}
+
+.ct-name {
+  color: #FF6B00;
 }
 
 
