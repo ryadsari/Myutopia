@@ -13,6 +13,7 @@ function initTheme(darkSwitch) {
 function resetTheme(darkSwitch) {
   if (darkSwitch.checked) {
     document.body.setAttribute("data-theme", "dark");
+    hide-me.classList.add("d-none");
     localStorage.setItem("darkSwitch", "dark");
   } else {
     document.body.removeAttribute("data-theme");
