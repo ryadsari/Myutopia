@@ -13,9 +13,6 @@
           <% end %>
         <% end %>
       </div>
-      <div>
-      <p class="char-name">You are chatting as <%= current_character.name %>   <%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50 %></p>
-      </div>
 
 <div class="chatrooms-container">
   <div class="sidenav">
@@ -48,17 +45,20 @@
   </div>
   <div class="chatroom-cards">
     <div class="header">
-      <div class="d-flex justify-content-between align-items-baseline">
+      <div class="d-flex justify-content-between">
+        <div>
+        <p class="char-name">You are chatting as <%= current_character.name %>   <%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50 %></p>
+        </div>
         <div class="chatroom-name">
           <h2>#chatroom <%= @chatroom.name %>
         </div>
-        <div class="chatroom-name d-flex justify-content-between align-items-baseline">
+        <div class="chatroom-name d-flex justify-content-between">
           <p class="char-name">You are chatting as <%= current_character.name %>   <%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50 %></p>
         </div>
       </div>
   </div>
 
-    <div class="column middle chatroom"
+    <div class="column middle chatroom "
       data-controller="chatroom-subscription"
       data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
     >

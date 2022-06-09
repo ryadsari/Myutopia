@@ -1,0 +1,44 @@
+<div class="main-title">
+  <h1>Dashboard</h1>
+</div>
+<%# <div class="dashboard-container"> %>
+  <%# <div class="dashboard-left-container "> %>
+    <div class="characters-container-before ">
+      <div class="container-title">
+        <h2>Your Characters</h2>
+      </div>
+      <div class="character-container">
+        <% @characters.each do |character| %>
+          <%= link_to characters_path do %>
+            <div class="character">
+              <p class="character-name"><%= character.name %></p>
+              <%= cl_image_tag character.photo.key, class: "character-avatar" %>
+            </div>
+            <% end %>
+        <% end %>
+    </div>
+    <div class="characters-container-before ">
+      <div class="container-title">
+        <h2>Your Characters</h2>
+      </div>
+      <div class="character-container">
+        <% @characters.each do |character| %>
+      <%= link_to characters_path do %>
+        <div class="character">
+          <p class="character-name"><%= character.name %></p>
+          <%= cl_image_tag character.photo.key, class: "character-avatar" %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+      <%# = render "characters_slider"
+    </div>
+    <div class="characters-container-before ">
+      <div class="container-title">
+        <h2>Your Chatrooms</h2>
+      </div>
+      <%#= render "chatrooms_sliders" %>
+    <%# </div>
+
+  </div>
+</div> %>
