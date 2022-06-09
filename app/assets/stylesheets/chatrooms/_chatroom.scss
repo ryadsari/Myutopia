@@ -29,6 +29,7 @@
   .message_content {
     margin-right: 2rem;
     margin-bottom: -2rem !important;
+    font-family: "Rajdhani", "Helvetica", "sans-serif";
   }
 
   #new_message {
@@ -68,12 +69,14 @@
 }
 
 .message-content {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
+  font-family: "Rajdhani", "Helvetica", "sans-serif";
 }
 
 .chat-container {
   margin-left: 240px;
 }
+
 
 .column.middle.chatroom {
   flex: 5 !important;
@@ -83,6 +86,10 @@
 
 p.char-name {
   float: right;
+}
+
+.cr-name {
+  color: #FF6B00;
 }
 
 .char-name {
