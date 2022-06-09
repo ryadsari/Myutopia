@@ -31,9 +31,6 @@
   <div class="chat-field">
     <div class="header">
       <div class="d-flex justify-content-between">
-        <div>
-        <p class="char-name">You are chatting as <%= current_character.name %>   <%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50 %></p>
-        </div>
         <div class="chatroom-name">
           <h2>#<%= @chatroom.name %></h2>
           <span class="chatroom-like-heart">
