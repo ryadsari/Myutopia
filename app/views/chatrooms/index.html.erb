@@ -7,6 +7,7 @@
     <div class="links">
      <% if user_signed_in? %>
         <li><h3>You are signed in as <%= current_character.name %></h3></li>
+        <li><%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50, class: "rounded-circle" %></li>
         <li><%= link_to "> Switch Character", new_character_session_path %></li>
         <li><%= link_to "> Add a new Chatroom", new_chatroom_path %></li>
         <li><%= link_to "> Delete your Chatrooms", dashboard_path %></li>
@@ -36,7 +37,7 @@
           <%= render "search_form", chatroom: @chatroom%>
         </div>
       </div>
-      <div class="chatroom-cards d-flex justify-content-start flex-row flex-wrap p-2 mb-5">
+      <div class="chatroom-cards d-flex justify-content-start align-items-start flex-row flex-wrap p-2 mb-5">
         <% @chatrooms.each do |chatroom| %>
           <div class="p-2 chatroom-card">
             <% if current_character.favorited?(chatroom) %>
@@ -57,6 +58,7 @@
                   <% else %>
                   <%= image_tag 'https://images.unsplash.com/photo-1585620385456-4759f9b5c7d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', height: 180, width: 200, class: "chatroom-img" %>
                   <% end %>
+                  <p class="category-name"><span class="chatroom-label">#chatroom </span><%= chatroom.name %></p>
                 </div>
                 <div class="flip-card-back">
                   <div class="flip-card-info d-flex flex-column align-items-center pt-3">

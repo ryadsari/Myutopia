@@ -2,8 +2,8 @@
   <small>
     <div class="d-flex flex-row">
       <div class="p-2"><%= cl_image_tag message.character.photo.key, width: 50, height: 50, crop: :fill, radius: 50 %></div>
-      <div class="p-2"><%= message.character.name %></div>
-      <div class="p-2 message-content"><%= message.content %></div>
+      <div class="p-2 cname"><%= message.character.name %></div>
+      <div class="message-content"><%= message.content %></div>
       <div class="p-2"><span class="message-time">(<%= message.created_at.strftime("%a %b %e at %l:%M %p") %>)</span></div>
     </div>
   </small>
