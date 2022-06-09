@@ -1,11 +1,13 @@
-<nav class="navbar navbar-expand-xl navbar-dark ctomus-navbar" aria-label="Sixth navbar example" style="padding-right: 5.5em; padding-left: 4em;">
-    <div class="container-fluid">
-      <%= link_to "MY UTOPIA", home_path, class: "title-second navbar-brand navbar-title" %>
+<nav class="navbar navbar sticky-top navbar-expand-xl navbar-dark ctomus-navbar" aria-label="Sixth navbar example">
+    <div class="container-fluid nav-content">
+      <div class="navbar-brand"><%= link_to "MY UTOPIA", home_path, class: "title-second navbar-brand navbar-title" %>
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExample06">
+
         <ul class="navbar-nav me-auto mb-2 mb-xl-0">
           <li class="nav-item">
             <% if user_signed_in? %>
