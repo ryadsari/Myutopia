@@ -3,26 +3,31 @@
   margin: 0;
 }
 
-.container_chara_card {
-  margin-top: 2em;
+.container-char-card {
   display: flex;
-
   flex: space-between;
   align-items: center;
-  box-shadow: 0 0 0.5em #FF6B00;
   padding-right: 10em;
   border-radius: 1em;
   background-color: rgba(70, 68, 68, 0.647);
 }
 
-.card_photo{
+.container-char-card:hover {
+  box-shadow: 0 0 0.5em #FF6B00;
+}
+
+.card-photo{
   height: 12em;
   width: 55%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   border-top-left-radius: 1em;
   border-bottom-left-radius: 1em;
+}
+
+.card-text {
+  padding-left: 70px;
 }
 
 .charater_index_body  a {
@@ -35,9 +40,25 @@
   color: #FF6B00;
 }
 
+.characters-header {
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  height: 170px;
+  background: url("https://res.cloudinary.com/dlzusxobf/image/upload/v1654614880/17973903_nggie9.jpg");
+  background-size: 100% 100%;
+  // background-blend-mode: overlay;
+}
+
 .main-container {
   display: grid;
   width: 70%;
   margin-left: 15%;
   margin-top: 2.2em;
+}
+
+.flip-cards {
+  padding-left:6em;
+  padding-right:6em;
 }

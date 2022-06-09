@@ -1,0 +1,213 @@
+* {
+  box-sizing: border-box;
+}
+
+.chatrooms-container {
+  width: 100%;
+  // margin-left: 185px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position:fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+.sidenav-logo {
+  color: white;
+}
+
+
+.choose-chatroom {
+  color: white;
+}
+
+/* Side navigation links */
+.sidenav a {
+  padding: 5px;
+  text-decoration: none;
+  display: block;
+}
+
+.sidenav h3 {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.sidenav-links {
+  padding-top: 30px;
+  text-align: center;
+  list-style: none;
+  line-height: 1.2;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  color: #fff;
+}
+
+/* Style the content */
+
+.chatroom-card {
+  width: 220px;
+  text-align: center;
+}
+
+.chatrooms-content {
+  margin-left: 240px;
+}
+
+.chatroom-cards {
+  padding: 3em;
+}
+
+
+.chatroom-img {
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid;
+}
+
+.chatroom-img:hover {
+  box-shadow: rgba(244, 245, 246, 0.2) 0px 8px 24px;
+}
+
+*, *::before, *::after {
+  box-sizing: content-box;
+}
+
+/* Style the header */
+.discover-chatrooms-header {
+  text-align: center;
+  padding-bottom: 1em;
+  font-size: 2rem;
+  width:100%;
+  height: 150px;
+  background-image: url("https://res.cloudinary.com/dlzusxobf/image/upload/v1654614880/17973903_nggie9.jpg"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-position-x: 44px;
+  background-position-y: -390px;
+}
+
+.chatrooms-title {
+  font-size: 68px;
+  color: white;
+  letter-spacing: 0.5rem;
+}
+
+/* Container for flexboxes */
+.row {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.category {
+  color: grey;
+}
+.category-name {
+  padding-top: 10px;
+}
+
+.chatroom-label {
+  color: grey;
+}
+
+// Flip-cards for chatrooms
+
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  border-radius: 10px;
+  margin-bottom: 4rem;
+}
+
+.flip-card-inner {
+  position: relative;
+  border: 1px solid;
+  border-radius:10px;
+  box-shadow: rgba(244, 244, 244, 0.2) 0px 8px 24px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #170100;
+  color: #FF6B00;
+  transform: rotateY(180deg);
+  font-size: 1.2rem;
+}
+
+.flipcard-char-name {
+  font-size: 2rem;
+  color: FF6B00;
+  background: transparent;
+}
+
+.flip-card-info {
+  padding:5px;
+}
+
+.ct-name {
+  color: #FF6B00;
+}
+
+
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .chatrooms-container {
+    min-width: 100%;
+  }
+}

@@ -1,0 +1,15 @@
+ <%= simple_form_for @chatroom do |f| %>
+                <!--<label for="chatroom">Please make a new chatroom</label>-->
+                <br>
+                <div class="cv5">
+                <%= f.input :name, class: "cv5" %>
+                </div>
+                <div class="cv5">
+                <%= f.input :category, collection: @categories %>
+                </div>
+                <%= f.input :photo, as: :file, class: 'form-control form-border cv6' %>
+                <div class="cv5">
+                <%= f.submit "Save your chatroom", class: "button-primary" %> <br><br>
+                <!--<%= f.button :button, "Cancel", type: "reset", class: "btn-secondary" %>-->
+                 </div>
+              <% end %>

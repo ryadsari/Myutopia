@@ -1,40 +1,25 @@
-
-<div class="header">
-  <div class="d-flex justify-content-between">
-      <div>
-        <h2>#<%= @chatroom.name %></h2>
-        <% if current_character.favorited?(@chatroom) %>
-          <%= link_to chatroom_unfavourite_path(@chatroom), method: 'delete' do %>
-            <i class="fa-solid fa-heart"></i>
-          <% end %>
-        <% else %>
-          <%= link_to chatroom_favourites_path(@chatroom), method: 'post' do %>
-            <i class="fa-regular fa-heart"></i>
-          <% end %>
-        <% end %>
-      </div>
-
-<div class="chatrooms-container">
+<div class="chat-container">
   <div class="sidenav">
     <div class="sidenav-logo d-flex justify-content-center">
       <a href="/home">MY<br><span class="title-second">UTOPIA</span></a>
 
     </div>
     <div class="sidenav-links">
+    <hr>
       <div class="links">
         <% if user_signed_in? %>
-        <%# <li>You are signed in as current_character.name </li> %>
-        <li><%= link_to "> My characters", characters_path %></li>
+        <!--<li><%= link_to "> Switch character", new_character_session_path %></li>-->
         <li><%= link_to "> Chatrooms", chatrooms_path %></li>
-        <li><%= link_to "> Switch character", new_character_session_path %></li>
+        <li><%= link_to "> Add a new Chatroom", new_chatroom_path %></li>
         <li><%= link_to "> Sign out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "> Sign in", user_session_path %></li>
         <% end %>
         <hr>
       </div>
-      <div class="choose-chatroom">
-        <h4>Choose another chatroom</h4>
+      <div>
+      <%= link_to "Choose another chatroom", chatrooms_path, class: "choose-chatroom" %>
+      <hr>
         <% @chatrooms.each do |chatroom| %>
         <li>
         <%= link_to chatroom.name, chatroom_path(chatroom) %>
@@ -43,17 +28,29 @@
       </div>
     </div>
   </div>
-  <div class="chatroom-cards">
+  <div class="chat-field">
     <div class="header">
       <div class="d-flex justify-content-between">
         <div>
         <p class="char-name">You are chatting as <%= current_character.name %>   <%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50 %></p>
         </div>
         <div class="chatroom-name">
-          <h2>#chatroom <%= @chatroom.name %>
+          <h2>#<%= @chatroom.name %></h2>
+          <span class="chatroom-like-heart">
+          <% if current_character.favorited?(@chatroom) %>
+            <%= link_to chatroom_unfavourite_path(@chatroom), method: 'delete' do %>
+              <i class="fa-solid fa-heart"></i>
+            <% end %>
+            <% else %>
+            <%= link_to chatroom_favourites_path(@chatroom), method: 'post' do %>
+              <i class="fa-regular fa-heart"></i>
+            <% end %>
+          <% end %>
+          </span>
         </div>
-        <div class="chatroom-name d-flex justify-content-between">
-          <p class="char-name">You are chatting as <%= current_character.name %>   <%= cl_image_tag current_character.photo.key, width: 40, height: 40, crop: :fill, radius: 50 %></p>
+        <div class="chatroom-character-name d-flex flex-column justify-content-between align-items-baseline">
+          <li class="char-name">You are chatting as <%= current_character.name %>   <%= cl_image_tag current_character.photo.key, width: 60, height: 60, crop: :fill, radius: 50, class: "rounded-circle" %></li>
+          <li><%= link_to "> Switch character", new_character_session_path %></li>
         </div>
       </div>
   </div>
@@ -62,19 +59,18 @@
       data-controller="chatroom-subscription"
       data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
     >
-    <div class="messages" data-chatroom-subscription-target="messages">
-      <% @chatroom.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
-      <% end %>
-    </div>
-      <%= simple_form_for [@chatroom, @message],
-        remote: true,
-        html: {data: {action: "ajax:success->chatroom-subscription#resetForm"}, class: "d-flex" } do |f|
-      %>
-        <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", wrapper_html: {class: "flex-grow-1"} %>
-        <%= f.submit "Send", class: "btn button-primary" %>
-      <% end %>
+      <div class="messages" data-chatroom-subscription-target="messages">
+        <% @chatroom.messages.each do |message| %>
+        <%= render "messages/message", message: message %>
+        <% end %>
+      </div>
+        <%= simple_form_for [@chatroom, @message],
+          remote: true,
+          html: {data: {action: "ajax:success->chatroom-subscription#resetForm"}, class: "d-flex" } do |f|
+        %>
+          <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", wrapper_html: {class: "flex-grow-1"} %>
+          <%= f.submit "Send", class: "btn button-primary" %>
+        <% end %>
     </div>
   </div>
-
 </div>

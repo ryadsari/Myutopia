@@ -20,12 +20,15 @@
   .messages {
     height: 100%;
     overflow-y: auto;
-    border: 1px solid $gray-200;
+    border: 1px solid #e9ecef;
+    background-color: black;
+    opacity: 0.8;
   }
 
   .message_content {
     margin-right: 2rem;
     margin-bottom: -2rem !important;
+    font-family: "Rajdhani", "Helvetica", "sans-serif";
   }
 
   #new_message {
@@ -38,6 +41,10 @@
 
   .links a {
     color: white;
+  }
+
+  .links li {
+    font-size:1.2rem;
   }
 
 
@@ -60,8 +67,28 @@
   }
 }
 
+.message-content {
+  font-size: 1.2rem;
+  font-family: "Rajdhani", "Helvetica", "sans-serif";
+}
+
+.chat-container {
+  margin-left: 240px;
+}
+
+
+.column.middle.chatroom {
+  flex: 5 !important;
+  height: 30em;
+  color: white
+}
+
 p.char-name {
   float: right;
+}
+
+.cr-name {
+  color: #FF6B00;
 }
 
 .char-name {
@@ -105,16 +132,24 @@ p.char-name {
   -ms-flex: 2;
   flex: 2;
 }
-.chatroom-form {
-  flex-direction: column;
-}
-.chatroom-name h2 {
-  color: white;
-}
 
 .chatroom-name {
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.chatroom-character-name {
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 0.5;
+
+  li {
+    list-style: none;
+  }
+}
+
+.chatroom-name h2 {
+  color: white;
 }
 
 .message-time {
@@ -123,6 +158,12 @@ p.char-name {
   color: grey;
   text-transform: lowercase;
 }
+
+.chatroom-like-heart {
+  padding-left: 15px;
+}
+
+
 
 
 

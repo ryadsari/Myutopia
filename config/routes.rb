@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboards#index'
   resources :characters
   resources :character_sessions, only: [:new, :create]
-  resources :chatrooms, only: [:show, :index, :new, :create] do
+  resources :chatrooms do
     resources :messages, only: :create
     resources :favourites, only: [:create]
     delete '/unfavourite', to: 'favourites#destroy'

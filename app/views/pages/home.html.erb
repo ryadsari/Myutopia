@@ -1,58 +1,68 @@
-<div class="home-container">
+<div style="position: fixed; z-index: -99; width: 100%; height: 100%">
+  <iframe
+    src="https://player.cloudinary.com/embed/?public_id=myut_rfx4bv&cloud_name=dlzusxobf&player%5Bfluid%5D=true&player%5Bcontrols%5D=true&player%5Bmuted%5D=true&player%5BshowJumpControls%5D=false&player%5Bautoplay%5D=true&player%5Bloop%5D=true&source%5BsourceTypes%5D%5B0%5D=hls"
+    width="100%"
+    height="100%"
+    allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+    allowfullscreen
+    frameborder="0"
+  ></iframe>
+</div>
+
+
+<div id='nonFooter'>
+
+<div class="home-container-">
   <div class="banner-text-container">
     <div class="banner-text">
-      <h3>A fully immersive experience</h3>
-      <p>Join the community</p>
+      <h3>Never step out of character</h3>
+      <p>Fully immerse yourself</p>
     </div>
     <div class="container-button">
       <%= link_to 'JOIN', user_session_path, class: 'button-primary' %>
     </div>
     <div class="arrow-container">
-      <a href="#info-section" class="arrow">v</a>
-    </div>
-  </div>
-  <div id="info-section-container">
-    <div id="info-section">
-      <div class="info-one">
-        <h3 class="info-titles">Create as many characters as you want</h4>
-        <p class="small-descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut. </p>
-      </div>
-      <div class="info-two">
-        <h3 class="info-titles">Join thousands of communities</h3>
-        <p class="small-descriptions">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-      <div class="info-three">
-        <h3 class="info-titles">Never reveal your true identity</h3>
-        <p class="small-descriptions">labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
+      <a href="#footer" class="arrow">⇩</a>
     </div>
   </div>
 
 </div>
-<%# <div id="log-in">
-  <div class="log-in-box">
-    <div class="form-container">
-      <p class="log-in-box-title">Join the Community</p>
-      <form action="">
-        <label for="email"></label><br>
-        <input type="email" placeholder="your email" class="input-fields">
-        <label for="password"></label><br>
-        <input type="password" placeholder="your password" class="input-fields">
-        <label for="name"></label><br>
-        <input type="name" placeholder="your name" class="input-fields">
-      </form>
+
+
+
+<div id='footer'>
+<div class="arrow-container">
+    <a href="#nonFooter" class="arrow arrow-up">⇧</a>
+  </div>
+<div id="info-section-container">
+  <div class="card__container">
+  <div class="card">
+    <div class="card__content">
+      <h3 class="info-titles">Never break out the immersion</h4>
+      <p class="small-descriptions">A place where you can fully enjoy role playing as you favorites characters. Never reveal your identity, or break out of the immersion of a good roleplay.The only limit is your imagination ! </p>
     </div>
-    <div class="log-in-box">
-    <div class="form-container">
-      <p class="log-in-box-title">Welcome Back</p>
-      <form action="">
-        <label for="email"></label><br>
-        <input type="email" placeholder="your email" class="input-fields">
-        <label for="password"></label><br>
-        <input type="password" placeholder="your password" class="input-fields">
-        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-        <%#= link_to "Log in", new_user_session_path, method: :new %>
-      <%# </form>
+    </div>
+  <div class="card">
+    <div class="card__content">
+      <h3 class="info-titles">Choose who you want to be</h3>
+      <p class="small-descriptions">whether you want to be a knight, a long bearded dwarf or even a marvel superhero. Here you will find a place to fully immerse yourself, and undergo a unique experience !</p>
+    </div>
+    </div>
+  <div class="card">
+    <div class="card__content">
+      <h3 class="info-titles">Join a wonderfull community</h3>
+      <p class="small-descriptions">A place where you can be part of an amazing community, never feel misunderstood again ! Join thousands of players and others dreamers to role play or chat with and fully immerse yourself !</p>
+    </div>
+    </div>
     </div>
   </div>
-</div> %>
+  </div>
+</div>
+
+
+<!-- Copyright -->
+  <div class="text-center p-4 copyright-footer" >
+    <p class="text-reset fw-bold text-footer"> made with love at le wagon barcelona </p>
+    <p class="text-reset fw-italic text-footer"> © 2022 &nbsp;&nbsp; Ryad - Julia - Gordana</p>
+  </div>
+  <!-- Copyright -->

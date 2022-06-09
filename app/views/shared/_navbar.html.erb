@@ -1,34 +1,39 @@
-<nav class="navbar navbar-expand-xl navbar-dark bg-dark" aria-label="Sixth navbar example" style="padding-right: 5.5em; padding-left: 4em;">
-    <div class="container-fluid">
-      <%= link_to "MY UTOPIA", home_path, class: "title-second navbar-brand navbar-title" %>
+<nav class="navbar navbar sticky-top navbar-expand-xl navbar-dark ctomus-navbar" aria-label="Sixth navbar example">
+    <div class="container-fluid nav-content">
+      <div class="navbar-brand"><%= link_to "MY UTOPIA", home_path, class: "title-second navbar-brand navbar-title" %>
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExample06">
+
         <ul class="navbar-nav me-auto mb-2 mb-xl-0">
           <li class="nav-item">
-           <%= link_to "My characters", characters_path, class: "nav-link active navbar-items" %>
+            <% if user_signed_in? %>
+
+           <%= link_to "My characters", new_character_session_path, class: "nav-link active navbar-items" %>
           </li>
           <li class="nav-item">
             <%= link_to "Chatrooms", chatrooms_path, class: "nav-link active navbar-items" %>
           </li>
+          <% else %>
+              <li><%= link_to "Sign up", new_user_registration_path, class: "nav-link active navbar-items" %></li>
+              <li><%= link_to "Sign in", user_session_path, class: "nav-link active navbar-items" %></li>
+          <% end %>
             </ul>
           </li>
         </ul>
 
 
+        <% if user_signed_in? %>
          <div class="nav-item dropdown">
             <a class="nav-link dropdown-toggle drop dropdown-custom" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
             <ul class="dropdown-menu" aria-labelledby="dropdown05">
-              <% if user_signed_in? %>
 
                 <li><%= link_to "Switch character", new_character_session_path, class: "dropdown-item" %></li>
+                <li><%= link_to "My Dashboard", dashboard_path, class: "dropdown-item" %></li>
                 <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
-
-              <% else %>
-                <li><%= link_to "Sign in", user_session_path, class: "dropdown-item" %></li>
-              <% end %>
 
               <li class="dropdown-item">
                 <div class="form-check form-switch form-check-reverse custom-control custom-switch" data-controller="dark-mode">
@@ -38,6 +43,7 @@
               </li>
             </ul>
           </div>
+        <% end %>
 
       </div>
     </div>
