@@ -18,6 +18,11 @@
             <%= link_to "Chatrooms", chatrooms_path, class: "nav-link active navbar-items" %>
           </li>
           <% else %>
+              <li><div class="form-check form-switch form-check-reverse custom-control custom-switch nav-link active navbar-items" data-controller="dark-mode">
+                  <input class="form-check-input custom-control-input " type="checkbox" id="darkSwitch" />
+                  <label class="form-check-label custom-control-label " for="darkSwitch">Light Mode </label>
+                </div>
+                </li>
               <li><%= link_to "Sign up", new_user_registration_path, class: "nav-link active navbar-items" %></li>
               <li><%= link_to "Sign in", user_session_path, class: "nav-link active navbar-items" %></li>
           <% end %>
