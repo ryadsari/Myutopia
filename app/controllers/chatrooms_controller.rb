@@ -15,7 +15,7 @@ class ChatroomsController < ApplicationController
       sql_query = " chatrooms.name ILIKE :query "
       @chatrooms = Chatroom.where(sql_query, query: "%#{params[:query]}%")
     else
-      @chatrooms = Chatroom.all
+      @chatrooms = Chatroom.all.order(created_at: :desc)
     end
     @categories = Chatroom.pluck(:category).uniq
   end
