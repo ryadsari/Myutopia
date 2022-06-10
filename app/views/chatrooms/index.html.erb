@@ -42,13 +42,15 @@
         </div>
       </div>
       <% if noResults == true %>
-        <h1 class="h2", style="color: #ff6b00;">
-          Unfortunately there is no channel that correspond to your search, Would you like to create a ne one ?
+        <div class="d-flex flex-column align-items-center justify-content-center pt-5">
+        <h1 class="h2 p2", style="color: #ff6b00;">
+          Oh! There doesn’t seem to be a channel named <strong>Queensdale.</strong> Would you like to create one?
         </h1>
 
-        <h1 class="text-center h1">
+        <h1 class="text-center h1 p2">
           <%= link_to "> Add a new Chatroom", new_chatroom_path %>
         </h1>
+        </div>
       <% end %>
       <div class="chatroom-cards d-flex justify-content-start flex-row flex-wrap p-2 mb-5">
         <% @chatrooms.each do |chatroom| %>
