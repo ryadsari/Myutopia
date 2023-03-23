@@ -67,3 +67,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pundit'
+
+gem "dockerfile-rails", "~> 1.2"
+
+gem "net-smtp", "~> 0.3.3", :require => false
+
+gem "net-imap", "~> 0.3.4", :require => false
+
+gem "net-pop", "~> 0.1.2", :require => false
